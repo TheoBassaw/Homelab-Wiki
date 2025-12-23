@@ -1,0 +1,21 @@
+site_name: The Homelab Wiki
+site_url: https://mydomain.org/
+theme:
+  name: material
+plugins:
+  - search
+nav:
+  - index.md
+  - rules.md
+  - introduction.md
+  - software.md
+  - hardware.md
+  - buyingguide.md
+  - networking.md
+  - tutorials.md
+  - resources.md
+  - vendors.md
+  - dbbtu.md
+  - buildlogs.md
+  - faq.md
+  - megaposts.md
