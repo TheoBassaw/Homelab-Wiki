@@ -1,0 +1,4626 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://mydomain.org/software/">
+      
+      
+        <link rel="prev" href="../introduction/">
+      
+      
+        <link rel="next" href="../hardware/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Homelab Software - The Homelab Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#homelab-software" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="The Homelab Wiki" class="md-header__button md-logo" aria-label="The Homelab Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            The Homelab Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Homelab Software
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="The Homelab Wiki" class="md-nav__button md-logo" aria-label="The Homelab Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    The Homelab Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rules of /r/homelab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    An Introduction to Homelabs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Homelab Software
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Homelab Software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#free-microsoft-licenses-for-students" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Free Microsoft Licenses for Students
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Free Microsoft Licenses for Students">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#microsoft-azure-for-students-formerly-imaginedreamspark" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Microsoft Azure for Students (formerly Imagine/DreamSpark)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#microsoft-licenses-for-small-business-owners-or-sole-proprietorship" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Microsoft Licenses for Small Business Owners (Or Sole Proprietorship)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Microsoft Licenses for Small Business Owners (Or Sole Proprietorship)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#microsoft-action-pack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Microsoft Action Pack
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bare-metal-hypervisors-type-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bare Metal Hypervisors (Type 1)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bare Metal Hypervisors (Type 1)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#oracle-vm-server-for-x86" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oracle VM Server for x86
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vmware-vsphere-esxi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VMware vSphere ESXi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vmware-vsphere-hypervisor-free-edition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VMware vSphere Hypervisor (Free Edition)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vmware-hypervisor-vmug-200year" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VMware Hypervisor (VMUG, $200/year)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hyper-v-server-2016" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hyper-V Server 2016
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bhyve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        bhyve
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Windows Server
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xenserver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XenServer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xcp-ng" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XCP-ng
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux-kvm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linux KVM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#umbrel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Umbrel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ovirt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        oVirt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proxmox-virtual-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Proxmox Virtual Environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#smartos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SmartOS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nutanix-community-edition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nutanix Community Edition
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hosted-hypervisors-type-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hosted Hypervisors (Type 2)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hosted Hypervisors (Type 2)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vmware-workstation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VMware Workstation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vmware-fusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VMware Fusion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oracle-virtualbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oracle VirtualBox
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parallels-desktop-12-mac" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parallels Desktop 12 (Mac)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Networking
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Networking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#opnsense" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OPNsense
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pfsense" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pfSense
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openwrt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OpenWRT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dd-wrt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DD-WRT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-vswitch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open vSwitch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vyos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VyOS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sophos-utm-home-edition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sophos UTM Home Edition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sophos-xg-firewall-home-edition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sophos XG Firewall Home Edition
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Storage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Storage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#drivepool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DrivePool
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#drivebender" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DriveBender
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloudextender-httpwwwdivision-mcomcloudxtender" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [CloudExtender] (http://www.division-m.com/cloudxtender/)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unraid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        unRAID
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#snapraid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SnapRAID
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flexraid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        flexRAID
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#freenas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FreeNAS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#napp-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        napp-it
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rockstor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rockstor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xigmanas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XigmaNAS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xpenology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Xpenology
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#owncloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        owncloud
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextcloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nextcloud
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openfiler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        openFiler
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openattic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        openATTIC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openmediavault" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OpenMediaVault
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storage-spaces-direct" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Storage Spaces Direct
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitoring
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Monitoring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nagios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nagios
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#omd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OMD
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pandorafms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pandorafms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prtg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PRTG
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zabbix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zabbix
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#observium" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Observium
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#librenms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LibreNMS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cacti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cacti
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#munin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Munin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zenoss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ZenOSS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alienvault-ossim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AlienVault OSSIM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graylog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Graylog
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sensu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sensu
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spiceworks-network-monitor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spiceworks Network Monitor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cabot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cabot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desktop-central" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Desktop Central
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#splunk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Splunk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#domotz-httpwwwdomotzcom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [Domotz] (http://www.domotz.com)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moloch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moloch
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ansible" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ansible
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-foreman" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Foreman
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r10k" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        r10k
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#media" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Media
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Media">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Plex
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emby" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Emby
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kodi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kodi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jellyfin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Jellyfin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oblecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oblecto
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remote-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remote Access
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Remote Access">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#guacamole" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Guacamole
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chrome-remote-desktop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chrome Remote Desktop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mremoteng" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mRemoteNG
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nomachine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NoMachine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#x2go" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        X2go
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terminals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Terminals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remote-desktop-gateway" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remote Desktop Gateway
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#domotz-httpwwwdomotzcom_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [Domotz] (http://www.domotz.com/)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openvpn-httpsopenvpnnetdownload-open-vpn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [OpenVPN] (https://openvpn.net/download-open-vpn/)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wireguard-httpswwwwireguardcom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [Wireguard] (https://www.wireguard.com/)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#firezone-httpsgithubcomfirezonefirezone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [Firezone] (https://github.com/firezone/firezone)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tactical-rmm-httpsgithubcomamidawaretacticalrmm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [Tactical RMM] (https://github.com/amidaware/tacticalrmm)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remote-configuration-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remote Configuration / Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Remote Configuration / Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#webmin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Webmin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ajenti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ajenti
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interworx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        InterWorx
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cpanel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cPanel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cockpit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cockpit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-admin-center" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Windows Admin Center
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#voip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VoIP
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="VoIP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#asterisk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Asterisk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#freepbx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FreePBX
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3cx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3CX
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Backup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#duplicati" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Duplicati
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xapi-back" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        xapi-back
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#veeam-endpoint-backup-free" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Veeam Endpoint Backup Free
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FOG
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#erpxe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ERPXE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vsquare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VSquare
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#veeam-availability-suite-v95" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Veeam Availability Suite v9.5
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unitrends-free" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        unitrends free
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vdp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VDP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vsphere-standalone-converter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        vSphere Standalone Converter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xsi-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XSI Backup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#export-vapp-vsphere-powercli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Export-VApp - vSphere PowerCLI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backuppc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BackupPC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Restic
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dokuwiki" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DokuWiki
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gollum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        gollum
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bookstack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BookStack
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phpipam" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        phpIPAM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paperwork-paperwork-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paperwork / Paperwork GitHub
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#confluence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Confluence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mediawiki" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MediaWiki
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-diagrams" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network Diagrams
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Network Diagrams">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagramsnet-formerly-drawio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        diagrams.net (formerly draw.io)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gliffy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gliffy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rackdiag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        rackdiag
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blockdiag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        blockdiag
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#racktables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RackTables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#yed-graph-editor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        yEd Graph Editor
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dashboards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dashboards
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dashboards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#netdata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Netdata
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prtg_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PRTG
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kibana" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kibana
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grafana" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grafana
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#freeboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        freeboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jumpsquares" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JumpSquares
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sexigraf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SexiGraf
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sexilog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SexiLog
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ip-address-and-infrastructure-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IP Address and Infrastructure Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IP Address and Infrastructure Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#netbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NetBox
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phpipam_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        phpIPAM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#teemip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TEEMIP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nipap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NIPAP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nsot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NSoT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#splunk_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Splunk
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more-ideas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        More ideas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="More ideas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#awesome-selfhosted" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Awesome Selfhosted
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Homelab Hardware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../buyingguide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The New Homelabber's Guide to Buying Used Gear
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking buying guide, tips and tricks.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorials and How-To's
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vendors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vendors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dbbtu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sound Levels, Heat and Power
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../buildlogs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build Logs.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../megaposts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Megaposts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#free-microsoft-licenses-for-students" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Free Microsoft Licenses for Students
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Free Microsoft Licenses for Students">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#microsoft-azure-for-students-formerly-imaginedreamspark" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Microsoft Azure for Students (formerly Imagine/DreamSpark)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#microsoft-licenses-for-small-business-owners-or-sole-proprietorship" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Microsoft Licenses for Small Business Owners (Or Sole Proprietorship)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Microsoft Licenses for Small Business Owners (Or Sole Proprietorship)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#microsoft-action-pack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Microsoft Action Pack
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bare-metal-hypervisors-type-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bare Metal Hypervisors (Type 1)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bare Metal Hypervisors (Type 1)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#oracle-vm-server-for-x86" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oracle VM Server for x86
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vmware-vsphere-esxi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VMware vSphere ESXi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vmware-vsphere-hypervisor-free-edition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VMware vSphere Hypervisor (Free Edition)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vmware-hypervisor-vmug-200year" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VMware Hypervisor (VMUG, $200/year)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hyper-v-server-2016" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hyper-V Server 2016
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bhyve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        bhyve
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Windows Server
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xenserver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XenServer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xcp-ng" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XCP-ng
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux-kvm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linux KVM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#umbrel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Umbrel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ovirt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        oVirt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proxmox-virtual-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Proxmox Virtual Environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#smartos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SmartOS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nutanix-community-edition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nutanix Community Edition
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hosted-hypervisors-type-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hosted Hypervisors (Type 2)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hosted Hypervisors (Type 2)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vmware-workstation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VMware Workstation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vmware-fusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VMware Fusion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oracle-virtualbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oracle VirtualBox
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parallels-desktop-12-mac" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parallels Desktop 12 (Mac)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Networking
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Networking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#opnsense" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OPNsense
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pfsense" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pfSense
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openwrt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OpenWRT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dd-wrt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DD-WRT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-vswitch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open vSwitch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vyos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VyOS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sophos-utm-home-edition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sophos UTM Home Edition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sophos-xg-firewall-home-edition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sophos XG Firewall Home Edition
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Storage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Storage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#drivepool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DrivePool
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#drivebender" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DriveBender
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloudextender-httpwwwdivision-mcomcloudxtender" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [CloudExtender] (http://www.division-m.com/cloudxtender/)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unraid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        unRAID
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#snapraid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SnapRAID
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flexraid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        flexRAID
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#freenas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FreeNAS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#napp-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        napp-it
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rockstor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rockstor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xigmanas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XigmaNAS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xpenology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Xpenology
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#owncloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        owncloud
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextcloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nextcloud
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openfiler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        openFiler
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openattic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        openATTIC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openmediavault" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OpenMediaVault
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storage-spaces-direct" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Storage Spaces Direct
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitoring
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Monitoring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nagios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nagios
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#omd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OMD
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pandorafms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pandorafms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prtg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PRTG
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zabbix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zabbix
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#observium" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Observium
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#librenms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LibreNMS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cacti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cacti
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#munin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Munin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zenoss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ZenOSS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alienvault-ossim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AlienVault OSSIM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graylog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Graylog
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sensu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sensu
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spiceworks-network-monitor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spiceworks Network Monitor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cabot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cabot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desktop-central" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Desktop Central
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#splunk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Splunk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#domotz-httpwwwdomotzcom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [Domotz] (http://www.domotz.com)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moloch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moloch
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ansible" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ansible
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-foreman" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Foreman
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r10k" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        r10k
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#media" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Media
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Media">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Plex
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emby" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Emby
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kodi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kodi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jellyfin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Jellyfin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oblecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oblecto
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remote-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remote Access
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Remote Access">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#guacamole" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Guacamole
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chrome-remote-desktop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chrome Remote Desktop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mremoteng" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mRemoteNG
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nomachine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NoMachine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#x2go" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        X2go
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terminals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Terminals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remote-desktop-gateway" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remote Desktop Gateway
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#domotz-httpwwwdomotzcom_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [Domotz] (http://www.domotz.com/)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openvpn-httpsopenvpnnetdownload-open-vpn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [OpenVPN] (https://openvpn.net/download-open-vpn/)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wireguard-httpswwwwireguardcom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [Wireguard] (https://www.wireguard.com/)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#firezone-httpsgithubcomfirezonefirezone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [Firezone] (https://github.com/firezone/firezone)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tactical-rmm-httpsgithubcomamidawaretacticalrmm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [Tactical RMM] (https://github.com/amidaware/tacticalrmm)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remote-configuration-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remote Configuration / Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Remote Configuration / Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#webmin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Webmin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ajenti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ajenti
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interworx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        InterWorx
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cpanel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cPanel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cockpit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cockpit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-admin-center" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Windows Admin Center
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#voip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VoIP
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="VoIP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#asterisk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Asterisk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#freepbx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FreePBX
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3cx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3CX
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Backup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#duplicati" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Duplicati
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xapi-back" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        xapi-back
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#veeam-endpoint-backup-free" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Veeam Endpoint Backup Free
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FOG
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#erpxe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ERPXE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vsquare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VSquare
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#veeam-availability-suite-v95" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Veeam Availability Suite v9.5
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unitrends-free" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        unitrends free
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vdp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VDP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vsphere-standalone-converter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        vSphere Standalone Converter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xsi-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XSI Backup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#export-vapp-vsphere-powercli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Export-VApp - vSphere PowerCLI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backuppc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BackupPC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Restic
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dokuwiki" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DokuWiki
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gollum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        gollum
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bookstack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BookStack
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phpipam" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        phpIPAM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paperwork-paperwork-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paperwork / Paperwork GitHub
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#confluence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Confluence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mediawiki" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MediaWiki
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-diagrams" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network Diagrams
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Network Diagrams">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagramsnet-formerly-drawio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        diagrams.net (formerly draw.io)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gliffy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gliffy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rackdiag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        rackdiag
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blockdiag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        blockdiag
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#racktables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RackTables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#yed-graph-editor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        yEd Graph Editor
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dashboards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dashboards
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dashboards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#netdata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Netdata
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prtg_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PRTG
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kibana" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kibana
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grafana" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grafana
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#freeboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        freeboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jumpsquares" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JumpSquares
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sexigraf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SexiGraf
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sexilog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SexiLog
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ip-address-and-infrastructure-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IP Address and Infrastructure Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IP Address and Infrastructure Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#netbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NetBox
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phpipam_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        phpIPAM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#teemip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TEEMIP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nipap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NIPAP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nsot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NSoT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#splunk_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Splunk
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more-ideas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        More ideas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="More ideas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#awesome-selfhosted" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Awesome Selfhosted
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="homelab-software">Homelab Software</h1>
+<h2 id="free-microsoft-licenses-for-students">Free Microsoft Licenses for Students</h2>
+<h3 id="microsoft-azure-for-students-formerly-imaginedreamspark"><a href="https://azure.microsoft.com/en-us/free/students/">Microsoft Azure for Students (formerly Imagine/DreamSpark)</a></h3>
+<p>Students enrolled in secondary and post-secondary education are eligible for free licenses for all editions of Windows Server and some other software such as SQL Server through Microsoft Azure for Students. Downloads are accessible once student status is verified, even if the Azure credit is never claimed. Certain schools may be eligible for more software such as Office, System Center or desktop editions of Windows.</p>
+<h2 id="microsoft-licenses-for-small-business-owners-or-sole-proprietorship">Microsoft Licenses for Small Business Owners (Or Sole Proprietorship)</h2>
+<h3 id="microsoft-action-pack"><a href="https://partner.microsoft.com/en-us/membership/action-pack/">Microsoft Action Pack</a></h3>
+<p>People who run their own small businesses or Sole Proprietorship are eligible for Internal Use (Personal Use) licenses for all editions of Windows Server and some other software such as SQL Server, System Center or desktop editions of Windows. Signing up will also give you 5 copies of Office 365 E3 and $100 of Azure credits every month. Cost is about $450 a year. </p>
+<h2 id="bare-metal-hypervisors-type-1">Bare Metal Hypervisors (Type 1)</h2>
+<h3 id="oracle-vm-server-for-x86"><a href="https://www.oracle.com/virtualization/vm-server-for-x86/index.html">Oracle VM Server for x86</a></h3>
+<p>A lesser-known Type 1 variant of the well known Oracle VM VirtualBox, featuring an open-source server that uses the Linux Kernel 
+and a freeware manager to manage the virtual machines (a SPARC variant is also available)</p>
+<h3 id="vmware-vsphere-esxi"><a href="http://www.vmware.com/uk/products/vsphere/features/esxi-hypervisor.html">VMware vSphere ESXi</a></h3>
+<p>The vSphere hypervisor, commonly known as "ESXi", is a bare-metal hypervisor with each virtual machine sharing the same physical resources.</p>
+<h3 id="vmware-vsphere-hypervisor-free-edition"><a href="http://www.vmware.com/uk/products/vsphere-hypervisor/">VMware vSphere Hypervisor (Free Edition)</a></h3>
+<p>Broadcom discontinued free licenses. This option is no longer available.
+VMware vSphere Hypervisor is a free bare-metal hypervisor that virtualizes servers so you can consolidate your applications on less hardware. Please note, that the free version comes with some limitations (e.g. 8 vCores per VM). They do not affect normal usecases, but more complex scenarios such as HA, complex virtual networking may reequire a paid license.</p>
+<h3 id="vmware-hypervisor-vmug-200year"><a href="https://www.vmug.com/evalexperience">VMware Hypervisor (VMUG, $200/year)</a></h3>
+<p>The VMware User Group offers a suite of fully-enabled and up to date VMware products for $200/year. Package includes ESXi, vCenter, vCloud Suite and several others. Registration at myvmware.com provides download access to ancillary programs such as vSphere Data Protection and vSphere Standalone Converter.</p>
+<h3 id="hyper-v-server-2016"><a href="https://www.microsoft.com/en-us/evalcenter/evaluate-hyper-v-server-2016">Hyper-V Server 2016</a></h3>
+<p>Free stripped-down version of Windows with Hyper-V related roles only.</p>
+<h3 id="bhyve"><a href="http://bhyve.org">bhyve</a></h3>
+<p>BHyVe is a legacy-free hypervisor developed by the FreeBSD team. It is now included with releases of FreeBSD from version 10 and upwards. It's activated by loading a single kernel module and ready for production use with Linux and FreeBSD guests.</p>
+<h3 id="windows-server">Windows Server</h3>
+<p>Windows Server supports working as a bare metal hypervisor using the Hyper-V role. Each Standard license allows one installation on bare metal and 2 VMs on a single server. Datacenter licenses allow for unlimited VMs that can be <a href="https://technet.microsoft.com/en-us/library/dn303421(v=ws.11).aspx">automatically activated with no network access</a>.</p>
+<h3 id="xenserver"><a href="http://xenserver.org/">XenServer</a></h3>
+<p>XenServer is an enterprise-class, cloud-proven, virtualization platform that delivers all of the critical features needed for any server and datacenter virtualization implementation.</p>
+<h3 id="xcp-ng"><a href="https://xcp-ng.org/">XCP-ng</a></h3>
+<p>A fork of XenServer, developed by the community. It has almost everything good about XenServer, but without the licensing and fully open source. XCP-ng can be managed preferably through <a href="https://xen-orchestra.com#!/xo-home">Xen Orchestra</a> (XO).</p>
+<h3 id="linux-kvm"><a href="https://www.linux-kvm.org/page/Main_Page">Linux KVM</a></h3>
+<p>KVM (for Kernel-based Virtual Machine) is a full virtualization solution for Linux on x86 hardware containing virtualization extensions (Intel VT or AMD-V). It consists of a loadable kernel module, kvm.ko, that provides the core virtualization infrastructure and a processor specific module, kvm-intel.ko or kvm-amd.ko.
+Using KVM, one can run multiple virtual machines running unmodified Linux or Windows images. Each virtual machine has private virtualized hardware: a network card, disk, graphics adapter, etc.
+KVM is open source software. The kernel component of KVM is included in mainline Linux, as of 2.6.20. The userspace component of KVM is included in mainline QEMU, as of 1.3.</p>
+<h3 id="umbrel"><a href="https://umbrel.com/">Umbrel</a></h3>
+<p>While Umbrel isn't exactly a hypervisor, it is built to be the perfect solution for homelabbers. It is free, open-source, and has a lot of the software below ready to be installed at the press of a button. Being based on debian/ubuntu, it can also manage docker, podman, and KVM/Qemu.</p>
+<h3 id="ovirt"><a href="https://www.ovirt.org/">oVirt</a></h3>
+<p>oVirt is free, open-source virtualization management platform. It was founded by Red Hat as a community project on which Red Hat Enterprise Virtualization is based. It allows centralized management of virtual machines, compute, storage and networking resources, from an easy to use web-based front-end with platform independent access. KVM on x86 64 architecture is the only hypervisor officially supported, but there is an ongoing effort to support PPC and ARM architectures in the future releases.</p>
+<ul>
+<li><a href="https://www.reddit.com/r/homelab/wiki/software/ovirt">oVirt Cluster Setup ^tutorial</a></li>
+</ul>
+<h3 id="proxmox-virtual-environment"><a href="https://www.proxmox.com/en/proxmox-ve">Proxmox Virtual Environment</a></h3>
+<p>Proxmox Virtual Environment is an open-source server virtualization environment. It is a Debian-based Linux distribution with a modified RHEL kernel and allows to deploy and manage virtual machines and containers.</p>
+<h3 id="smartos"><a href="https://www.joyent.com/smartos">SmartOS</a></h3>
+<p>SmartOS is an open-source in memory operating system built on <a href="https://en.wikipedia.org/wiki/Illumos">illumos</a> (the continuation of OpenSolaris), using <a href="https://en.wikipedia.org/wiki/Solaris_Containers">zones</a> (lightweight containerization, called "OS VMs"), and KVM or bhyve for hardware virtualization. SmartOS is the base of <a href="https://www.joyent.com/triton">Triton</a> (formerly known as SmartDataCenter) as well as <a href="https://project-fifo.net/">Project-FiFo</a>, two open-source cloud orchestration platforms.</p>
+<h3 id="nutanix-community-edition"><a href="https://www.nutanix.com/products/community-edition/">Nutanix Community Edition</a></h3>
+<p>Bare-metal <em>converged</em> hypervisor based off of KVM. Nutanix AHV (Acropolis Hypervisor) is widely used in commercial and government spaces. Free edition will run on a single, three, or four hosts. Will automatically tier storage between SSD and spinning disk, among a bunch of other cool things.</p>
+<h2 id="hosted-hypervisors-type-2">Hosted Hypervisors (Type 2)</h2>
+<h3 id="vmware-workstation"><a href="http://www.vmware.com/uk/products/workstation">VMware Workstation</a></h3>
+<p>VMware Workstation Pro transforms the way technical professionals develop, test, demonstrate and deploy software by running multiple x86-based operating systems simultaneously on the same PC.</p>
+<h3 id="vmware-fusion"><a href="https://www.vmware.com/au/products/fusion.html">VMware Fusion</a></h3>
+<p>VMware Fusion gives Mac users the power to run Windows on Mac along with hundreds of other operating systems side by side with Mac applications, without rebooting. Fusion is simple enough for home users and powerful enough for IT professionals, developers and businesses.</p>
+<h3 id="oracle-virtualbox"><a href="https://www.virtualbox.org/">Oracle VirtualBox</a></h3>
+<p>VirtualBox is a powerful x86 and AMD64/Intel64 software virtualization product for enterprise as well as home use. Not only is VirtualBox an extremely feature rich, high performance product for enterprise customers, it is also the only professional solution that is freely available as Open Source Software under the terms of the GNU General Public License (GPLv2).</p>
+<h3 id="parallels-desktop-12-mac"><a href="http://www.parallels.com/products/desktop/">Parallels Desktop 12 (Mac)</a></h3>
+<p>Use both Mac and Windows applications on your Mac without rebooting! Microsoft Office for Windows, Internet Explorer, Access, Visual Studio, AutoCAD, Project, Visio, and hundreds of others.</p>
+<h2 id="networking">Networking</h2>
+<h3 id="opnsense"><a href="https://opnsense.org/">OPNsense</a></h3>
+<p>OPNsense is open source, FreeBSD-based firewall and routing software developed by Deciso, a company in the Netherlands that makes hardware and sells support packages for OPNsense. Additionally, it can be setup on hardware or virtualized, touted for its reliability, offering great features with no cost. It is a fork of pfSense, which in turn was forked from m0n0wall, which was built on FreeBSD. It was launched in January 2015.</p>
+<h3 id="pfsense"><a href="https://www.pfsense.org/">pfSense</a></h3>
+<p>pfSense is easily /r/homelab's go to software firewall, with many enterprise options and it's easy management it's great for all users, skilled or not. pfSense is an open source firewall/router computer software distribution based on FreeBSD. It is installed on a physical computer or a virtual machine to make a dedicated firewall/router for a network and is noted for its reliability and offering features often only found in expensive commercial firewalls.</p>
+<h3 id="openwrt"><a href="https://openwrt.org/">OpenWRT</a></h3>
+<p>The OpenWrt Project is a Linux operating system targeting embedded devices. Instead of trying to create a single, static firmware, OpenWrt provides a fully writable filesystem with package management. It is targeted towards numerous WLAN routers, which means you can customize the router to your preferences, without having to deal with locked, proprietary firmware.</p>
+<h3 id="dd-wrt"><a href="https://dd-wrt.com/">DD-WRT</a></h3>
+<p>DD-WRT is the project OpenWRT was based on, and is generally viewed as legacy only. DD-WRT does not include a package management system, unlike OpenWRT</p>
+<h3 id="open-vswitch"><a href="http://openvswitch.org/">Open vSwitch</a></h3>
+<p>Open vSwitch is a production quality, multilayer virtual switch licensed under the open source Apache 2.0 license.  It is designed to enable massive network automation through programmatic extension, while still supporting standard management interfaces and protocols.</p>
+<h3 id="vyos"><a href="https://wiki.vyos.net/wiki/Main_Page">VyOS</a></h3>
+<p>VyOS is a Linux-based network operating system that provides software-based network routing, firewall, and VPN functionality. VyOS is a free, open-source community fork of Vyatta. It can run on any hypervisor and features a fully scriptable CLI. It supports major network protocols like BGP, OSPF, MPLS, IPsec and several others. One of the coolest features of VyOS is its DMVPN support.  It allows you to have VPNs back to a Hub, then allow for the automatic creation of spoke-spoke VPN tunnels as needed.</p>
+<h3 id="sophos-utm-home-edition"><a href="https://www.sophos.com/en-us/products/free-tools/sophos-utm-home-edition.aspx">Sophos UTM Home Edition</a></h3>
+<p>Sophos UTM 9 Home offers enterprise Firewall protection and various other features for free.  "It features full Network, Web, Mail and Web Application Security with VPN functionality and protects up to 50 IP addresses."</p>
+<h3 id="sophos-xg-firewall-home-edition"><a href="https://www.sophos.com/en-us/products/free-tools/sophos-xg-firewall-home-edition.aspx">Sophos XG Firewall Home Edition</a></h3>
+<p>Sophos XG Firewall Home offers "Next-Gen" enterprise firewall protection, and is the spiritual successor to UTM 9.  Much like UTM 9, this is free as well.  "Features full protection for your home network, including anti-malware, web security and URL filtering, application control, IPS, traffic shaping, VPN, reporting and monitoring, and much more."</p>
+<h2 id="storage">Storage</h2>
+<h3 id="drivepool"><a href="https://stablebit.com/DrivePool">DrivePool</a></h3>
+<p>DrivePool is a state of the art disk pooling application that features file and directory duplication.  It combines any drive you wish to add to the pool so that Windows thinks is one drive (it’s a virtual drive).  It uses the NTFS filesystem that is standard in all Windows machines and can be controlled as such.  There are no limits to the size of the disk that can be added to the pool and you can have different sized disks in the same pool while going beyond the 16TB NTFS maximum.</p>
+<h3 id="drivebender"><a href="http://www.division-m.com/drivebender/">DriveBender</a></h3>
+<p>The class leading storage pooling technology for Microsoft Windows. Developed by Division-M, Drive Bender allows for file redundancy via file duplication, and unlike RAID, does not require any proprietary drive format or complicated setup. (Now free)</p>
+<h3 id="cloudextender-httpwwwdivision-mcomcloudxtender">[CloudExtender] (http://www.division-m.com/cloudxtender/)</h3>
+<p>Local Windows storage, powered by the cloud... with optional, state of the art TNO (trust no one) file encryption built right in. Create a Windows drive or folder that maps directly to your favorite storage platform in minutes.</p>
+<h3 id="unraid"><a href="https://lime-technology.com/">unRAID</a></h3>
+<p>A network-attached storage operating system that can be run from a USB stick to share our disks. The newest version (6.2), enables dual-parity drives, cache pooling, and up to 24 assignable disks.</p>
+<h3 id="snapraid"><a href="http://www.snapraid.it/">SnapRAID</a></h3>
+<p>A backup program for disk arrays. It stores parity information of your data and it recovers from up to six disk failures.</p>
+<h3 id="flexraid"><a href="http://www.flexraid.com/">flexRAID</a></h3>
+<p>A family of storage data protection products that provide great flexibility and various innovations. The current product line includes: RAID over File System (RAID-F) Transparent RAID (tRAID).</p>
+<h3 id="freenas"><a href="http://www.freenas.org/">FreeNAS</a></h3>
+<p>An operating system that can be installed on virtually any hardware platform to share computer data storage over a computer network. Please see the <a href="https://forums.freenas.org/index.php?threads/hardware-recommendations-read-this-first.23069/">FreeNAS Hardware Recommendation Thread</a> for more info. </p>
+<p><a href="https://www.reddit.com/r/homelab/wiki/hardware/virtfreenas"><strong>Can I virtualize FreeNAS?</strong></a></p>
+<h3 id="napp-it"><a href="https://napp-it.org/">napp-it</a></h3>
+<p>A highend ZFS storage solution without the cost.
+Please visit these threads for questions.  <a href="https://forums.servethehome.com/index.php?threads/napp-it-and-omnios-esxi-zfs-appliance-it-works.2476/">Here is the ServeTheHome forum</a> where the dev 'Gea' helps out &amp; also <a href="https://hardforum.com/threads/opensolaris-derived-zfs-nas-san-omnios-openindiana-solaris-and-napp-it.1573272/">here on Hardforum</a></p>
+<h3 id="rockstor"><a href="http://rockstor.com/">Rockstor</a></h3>
+<p>A free and open source NAS (Network Attached Storage) solution. It's a software solution and can be installed on any hardware or a virtual machine satisfying these minimum requirements.</p>
+<h3 id="xigmanas"><a href="http://www.xigmanas.com/">XigmaNAS</a></h3>
+<p>The XigmaNAS operating system can be installed on virtually any hardware platform to share computer data storage over a computer network. <a href="https://www.xigmanas.com/wiki/doku.php?id=xigmanas_users_hardware">XigmaNAS hardware requirements</a></p>
+<h3 id="xpenology"><a href="http://xpenology.com/">Xpenology</a></h3>
+<p>The name of a Linux boot image, which allows to run operating system Sinology DSM on almost any hardware (not just Synology).</p>
+<h3 id="owncloud"><a href="https://owncloud.org/">owncloud</a></h3>
+<p>A self-hosted file sync and share server.</p>
+<h3 id="nextcloud"><a href="https://nextcloud.com/">Nextcloud</a></h3>
+<p>A fork of ownCloud designed to be more community focused. Nextcloud is a drop-in replacement for ownCloud.</p>
+<h3 id="openfiler"><a href="https://www.openfiler.com/">openFiler</a></h3>
+<p>Provides a simple way to deploy and manage networked storage.</p>
+<h3 id="openattic"><a href="http://openattic.org">openATTIC</a></h3>
+<p>openATTIC combines open source storage tools in such a way that their entire functionality can be managed through a central interface. Carefully matched components ensure both stability and security. Its open interface enables you to integrate openATTIC to provisioning, monitoring and backup systems.</p>
+<h3 id="openmediavault"><a href="http://www.openmediavault.org/">OpenMediaVault</a></h3>
+<p>The open network attached storage solution. Great for beginners with a simple and intuitive web interface that does not require a lot of resources.</p>
+<h3 id="storage-spaces-direct"><a href="https://blogs.technet.microsoft.com/filecab/2016/11/21/deep-dive-pool-in-spaces-direct/">Storage Spaces Direct</a></h3>
+<p>Available only on Windows Server 2016 and later, Storage Spaces Direct builds on the previous Storage Spaces technologies to offer a homogeneous shared-nothing storage solution that scales similarly to ScaleIO. Storage and compute are on the same nodes, reducing cost and complexity.</p>
+<h2 id="monitoring">Monitoring</h2>
+<h3 id="nagios"><a href="https://www.nagios.org/">Nagios</a></h3>
+<p>A powerful monitoring system that enables organizations to identify and resolve IT infrastructure problems before they affect critical business processes.</p>
+<h3 id="omd"><a href="http://omdistro.org/">OMD</a></h3>
+<p>OMD avoids the tedious work of manually compiling and integrating Nagios addons while at the same time avoiding the problems of pre-packaged installations coming with your Linux distribution. It bundles Nagios together with many important addons and can easily be installed on every major Linux distribution.</p>
+<h3 id="pandorafms"><a href="http://pandorafms.com/">Pandorafms</a></h3>
+<p>The most flexible monitoring software in the market. With a single tool, Pandora FMS can monitor everything: infrastructure, applications, services, and business progress.</p>
+<h3 id="prtg"><a href="https://www.paessler.com/prtg">PRTG</a></h3>
+<p>A network monitoring software that is powerful and easy to use. Free for 100 sensors.</p>
+<h3 id="zabbix"><a href="http://www.zabbix.com/">Zabbix</a></h3>
+<p>The ultimate enterprise-level software designed for real-time monitoring of millions of metrics collected from tens of thousands of servers, virtual machines and network devices.</p>
+<h3 id="observium"><a href="http://www.observium.org/">Observium</a></h3>
+<p>A low-maintenance auto-discovering network monitoring platform supporting a wide range of device types, platforms and operating systems.</p>
+<h3 id="librenms"><a href="http://www.librenms.org/">LibreNMS</a></h3>
+<p>A fully featured network monitoring system that provides a wealth of features and device support.</p>
+<h3 id="cacti"><a href="http://www.cacti.net/">Cacti</a></h3>
+<p>A complete network graphing solution designed to harness the power of RRDTool's data storage and graphing functionality.</p>
+<h3 id="munin"><a href="http://munin-monitoring.org/">Munin</a></h3>
+<p>Surveys all your computers and remembers what it saw. It presents all the information in graphs through a web interface.</p>
+<h3 id="zenoss"><a href="https://www.zenoss.com/">ZenOSS</a></h3>
+<p>An award winning, open source monitoring product that automatically discovers resources, without the use of agents, and provides visibility across all aspects of your IT environment whether physical, virtual.</p>
+<h3 id="alienvault-ossim"><a href="https://www.alienvault.com/products/ossim">AlienVault  OSSIM</a></h3>
+<p>An open source security information and event management system. OSSIM combines Snort, OpenVAS, Nagios, OSSEC, and other tools into a single portal with log collection and correlation.</p>
+<h3 id="graylog"><a href="https://www.graylog.org/">Graylog</a></h3>
+<p>Centralize and aggregate all your log files for 100% visibility. Use our powerful query language to search through terabytes of log data to discover and analyze important information.</p>
+<h3 id="sensu"><a href="https://sensuapp.org/">Sensu</a></h3>
+<p>Monitoring that doesn't suck. Monitor servers, services, application health, and business KPIs. Collect and analyze custom metrics. Get notified about failures before your users do.</p>
+<h3 id="spiceworks-network-monitor"><a href="http://www.spiceworks.com/free-network-monitoring-management-software/">Spiceworks Network Monitor</a></h3>
+<p>Spiceworks is a free network monitoring software that runs on Windows. It's very easy to set up and use, although it's a bit limited.</p>
+<h3 id="cabot"><a href="http://cabotapp.com/">Cabot</a></h3>
+<p>Self-hosted, easily-deployable monitoring and alerts service - like a lightweight PagerDuty.</p>
+<h3 id="desktop-central"><a href="https://www.manageengine.com/products/desktop-central/">Desktop Central</a></h3>
+<p>Self-hosted, inventory and patch management for Windows and Linux.  Really nice to automate updates of OS and 3rd party.  Supports up to 25 devices for free. Also includes MDM for mobile devices.</p>
+<h3 id="splunk"><a href="http://splunk.com/">Splunk</a></h3>
+<p>Splunk can ingest system data and logs and allow you to graph them. Deployment is simple, but configuring monitoring can be complex, but incredibly flexible. They offer 500mb/day free tier.</p>
+<h3 id="domotz-httpwwwdomotzcom">[Domotz] (http://www.domotz.com)</h3>
+<p>Aimed more at device integrators, but very useful for homelabbers, Domotz includes simple SNMP monitoring (including CPU, mem, and network), as well as port monitoring, web site monitoring and they can do push notifications through their app. They also allow you remote access back to your network through their cloud. It is not free, but at ~$3/month, very inexpensive. </p>
+<h3 id="moloch"><a href="https://github.com/aol/moloch">Moloch</a></h3>
+<p>Moloch is an open source, large scale, full packet capturing, indexing, and database system for analyzing network traffic. </p>
+<h2 id="configuration-management">Configuration Management</h2>
+<h3 id="ansible"><a href="https://www.ansible.com/">Ansible</a></h3>
+<p>Ansible is an open source software that automates software provisioning, configuration management, and application deployment. Ansible connects via SSH, remote PowerShell or via other remote APIs.</p>
+<h3 id="the-foreman"><a href="https://theforeman.org/">The Foreman</a></h3>
+<p>Foreman (also known as The Foreman) is an open source complete life cycle systems management tool for provisioning, configuring and monitoring of physical and virtual servers.</p>
+<ul>
+<li><a href="https://www.reddit.com/r/homelab/wiki/software/theforeman">The Foreman ^tutorial</a></li>
+</ul>
+<h3 id="r10k"><a href="https://github.com/puppetlabs/r10k">r10k</a></h3>
+<p>R10k provides a general purpose toolset for deploying Puppet environments and modules. It implements the Puppetfile format and provides a native implementation of Puppet dynamic environments.</p>
+<ul>
+<li><a href="https://www.reddit.com/r/homelab/wiki/software/r10k">r10k ^tutorial</a></li>
+</ul>
+<h2 id="media">Media</h2>
+<h3 id="plex"><a href="https://plex.tv/">Plex</a></h3>
+<p>Plex is a media server software package that organizes all of your media and can allow you access to it anywhere in the world on nearly every device available.  It supports multiple file formats with movies, music, and photos while transcoding any media to devices that can’t support it.</p>
+<h3 id="emby"><a href="https://emby.media/">Emby</a></h3>
+<p>Media server for personal streaming movies tv music photos in mobile app or browser for all devices including android, iOS, windows phone, appletv, androidtv, smarttv, and dlna.</p>
+<h3 id="kodi"><a href="https://kodi.tv/">Kodi</a></h3>
+<p>Kodi® Kodi® (formerly known as XBMC™) is an award-winning free and open source (GPL) software media center for playing videos, music, pictures, games, and more. Kodi runs on Linux, OS X, Windows, iOS, and Android, featuring a 10-foot user interface for use with televisions and remote controls.</p>
+<h3 id="jellyfin"><a href="https://github.com/jellyfin/jellyfin">Jellyfin</a></h3>
+<p>The Free Software Media System. (Fully open source fork of Emby)</p>
+<h3 id="oblecto"><a href="https://github.com/robinp7720/oblecto">Oblecto</a></h3>
+<p>Oblecto is a fully open source media server with the ability to federate with other Oblecto instances.</p>
+<h2 id="remote-access">Remote Access</h2>
+<h3 id="guacamole"><a href="https://guacamole.incubator.apache.org/">Guacamole</a></h3>
+<p>A clientless remote desktop gateway. It supports standard protocols like VNC and RDP.</p>
+<h3 id="chrome-remote-desktop"><a href="https://chrome.google.com/webstore/detail/chrome-remote-desktop/gbchcmhmhahfdphkhkmpfmihenigjmpp?hl=en">Chrome Remote Desktop</a></h3>
+<p>Allows users to remotely access another computer through Chrome browser or a Chromebook.</p>
+<h3 id="mremoteng"><a href="http://www.mremoteng.org/">mRemoteNG</a></h3>
+<p>A fork of mRemote, an open source, tabbed, multi-protocol, remote connections manager. mRemoteNG adds bug fixes and new features to mRemote.</p>
+<h3 id="nomachine"><a href="https://www.nomachine.com/">NoMachine</a></h3>
+<p>Get to your desktop at the speed of light. NoMachine is the fastest remote desktop you have ever tried. Control any computer in the world and start working on it</p>
+<h3 id="x2go"><a href="http://wiki.x2go.org">X2go</a></h3>
+<p>Open source, FAST remote access to Linux desktops.  Forked from the NoMachine NX libraries before they went proprietary, X2go's advantages are being Free Software, actively developed, and running entirely through SSH tunnels.  No need to open vulnerable services to the WAN.  Clients available for Windows, Mac, Linux, BSD.</p>
+<h3 id="terminals"><a href="https://github.com/terminals-Origin/Terminals">Terminals</a></h3>
+<p>Terminals is a secure, multi tab terminal services/remote desktop client for Windows that supports RDP/VNC/VMRC/SSH/Telnet/RAS/ICA Citrix, and HTTP/HTTPS viewers</p>
+<h3 id="remote-desktop-gateway">Remote Desktop Gateway</h3>
+<p>Remote Desktop Gateway (or RDG) is a Windows Server specific role which proxies Remote Desktop (RDP) connections from your favorite RDP client over an externally accessible HTTPS connection, allowing you to more easily bypass strict firewalls, as well as integrate it with your existing web infrastructure, such as behind a web application firewall, load balancer, or reverse proxy.</p>
+<h3 id="domotz-httpwwwdomotzcom_1">[Domotz] (http://www.domotz.com/)</h3>
+<p>Aimed more at device integrators, but very useful for homelabbers, Domotz includes simple SNMP monitoring (including CPU, mem, and network), as well as port monitoring, web site monitoring and they can do push notifications through their app. They also allow you remote access back to your network through their cloud. It is not free, but at ~$3/month, very inexpensive.</p>
+<h3 id="openvpn-httpsopenvpnnetdownload-open-vpn">[OpenVPN] (https://openvpn.net/download-open-vpn/)</h3>
+<p>OpenVPN is a server, appliance, or service you can run on your network to allow secure access to your network. It is present on OPNsense and pfSense firewall appliances, as well as available to be installed on a server or deployed as a virtual appliance. Fully capable and allows for lots of customization and configuration for clients. </p>
+<h3 id="wireguard-httpswwwwireguardcom">[Wireguard] (https://www.wireguard.com/)</h3>
+<p>WireGuard is an extremely simple yet fast and modern VPN that utilizes state-of-the-art cryptography. It aims to be faster, simpler, leaner, and more useful than IPsec, while avoiding the massive headache. It intends to be considerably more performant than OpenVPN. Easy to setup on a <a href="https://pivpn.io/">Raspberry Pi</a>. </p>
+<h3 id="firezone-httpsgithubcomfirezonefirezone">[Firezone] (https://github.com/firezone/firezone)</h3>
+<p>Open source remote access manager that uses WireGuard. It has a good web UI, and supports SSO and MFA. It can be hosted on most Linux distros.</p>
+<h3 id="tactical-rmm-httpsgithubcomamidawaretacticalrmm">[Tactical RMM] (https://github.com/amidaware/tacticalrmm)</h3>
+<p>Tactical RMM is a remote access, monitoring &amp; management tool, built with Django and Vue. It uses an agent written in golang and integrates with MeshCentral.
+It supports Windows, Linux with Systemd and Mac including apple silicon.</p>
+<h2 id="remote-configuration-management">Remote Configuration / Management</h2>
+<h3 id="webmin"><a href="http://www.webmin.com/">Webmin</a></h3>
+<p>Webmin is a web-based interface for system administration for Unix. Using any modern web browser, you can setup user accounts, Apache, DNS, file sharing and much more. </p>
+<h3 id="ajenti"><a href="http://ajenti.org/">Ajenti</a></h3>
+<p>Ajenti is a Linux &amp; BSD web admin panel.</p>
+<h3 id="interworx"><a href="http://interworx.com">InterWorx</a></h3>
+<p>InterWorx is a Linux-based web hosting control panel that provides a graphical interface and automation tools designed to simplify the process of hosting a website. Note: Resellers can provide a single-domain free license.</p>
+<h3 id="cpanel"><a href="http://www.cpanel.com/">cPanel</a></h3>
+<p>cPanel is a Linux-based web hosting control panel that provides a graphical interface and automation tools designed to simplify the process of hosting a web site.</p>
+<h3 id="cockpit"><a href="http://cockpit-project.org/">Cockpit</a></h3>
+<p>Cockpit is an interactive server admin interface for GNU/Linux. It is easy to use and very light weight.</p>
+<h3 id="windows-admin-center"><a href="https://docs.microsoft.com/en-us/windows-server/manage/windows-admin-center/understand/windows-admin-center">Windows Admin Center</a></h3>
+<p>Windows Admin Center is a free new browser-based app made by Microsoft for managing Windows Servers, Clusters and Windows 10 PCs. It is the recommended solution to manage Windows Server Core installations and is incredibly easy to use.</p>
+<h2 id="voip">VoIP</h2>
+<h3 id="asterisk"><a href="http://www.asterisk.org/">Asterisk</a></h3>
+<p>An open source framework for building communications applications. Asterisk turns an ordinary computer into a communications server.</p>
+<h3 id="freepbx"><a href="https://www.freepbx.org/">FreePBX</a></h3>
+<p>A web-based open source GUI (graphical user interface) that controls and manages Asterisk (PBX).</p>
+<h3 id="3cx"><a href="http://3cx.com/">3CX</a></h3>
+<p>A Windows or Linux based VOIP Software. Free for 16 sim. calls.</p>
+<h2 id="backup">Backup</h2>
+<h3 id="duplicati"><a href="https://www.duplicati.com/">Duplicati</a></h3>
+<p>Free backup software for Windows, macOS, and Linux supporting tons of backend destinations such as Backblaze B2, Tardigrade, Microsoft OneDrive, Amazon S3, Google Drive, box.com, Mega, hubiC</p>
+<h3 id="xapi-back"><a href="https://github.com/izderadicka/xapi-back">xapi-back</a></h3>
+<p>A simple backup tool for XenServer or XCP – xen hypervisors using xapi toolstack. xapi-back is a command line tool with simple and clear interface (command + options). The tool is written in python.</p>
+<h3 id="veeam-endpoint-backup-free"><a href="https://www.veeam.com/endpoint-backup-free.html">Veeam Endpoint Backup Free</a></h3>
+<p>Provides a simple solution for backing up Windows-based desktops and laptops.</p>
+<h3 id="fog"><a href="https://fogproject.org/">FOG</a></h3>
+<p>A free, open source computer cloning solution.</p>
+<h3 id="erpxe"><a href="http://erpxe.com/">ERPXE</a></h3>
+<p>A complete PXE solution featuring a broad range of recovery tools and various OS installations in one box.</p>
+<h3 id="vsquare"><a href="http://www.vsquarebackup.com/">VSquare</a></h3>
+<p>Backup suite for ESXi and Hyper-V. Supports the free ESXi version over SSH.</p>
+<h3 id="veeam-availability-suite-v95"><a href="https://www.veeam.com/data-center-availability-suite.html">Veeam Availability Suite v9.5</a></h3>
+<p>Veeam Availability Suite v9.5 is a combination of Veeam Backup &amp; Replication™ and Veeam ONE™ , can backup Hyper-V and VMware ESXi (<a href="https://www.veeam.com/kb2222">Veeam v9.5u1</a> supports VMware v6.5 products as of 20Jan17.)</p>
+<h3 id="unitrends-free"><a href="http://www.unitrends.com/products/software/unitrends-free">unitrends free</a></h3>
+<p>Virtual appliance-based backup for ESXi and Hyper-V with enterprise features, such as cloud integration and instant VM recovery, and protects up to 1.0 TB of data (for free!).</p>
+<h3 id="vdp"><a href="https://www.vmware.com/files/kr/pdf/vsphere/VMware-vSphere-Data-Protection-Overview.pdf">VDP</a></h3>
+<p>End of Life announced 4/5/2017. vSphere 6.5 will be the last supported version.
+VMware vSphere Data Protection, native ESXi backup. Easy to use but <a href="http://www.virtuallyghetto.com/2013/11/how-to-evaluate-vsphere-data-protection.html">requires</a> internal forward and reverse DNS lookup.</p>
+<h3 id="vsphere-standalone-converter"><a href="https://my.vmware.com/web/vmware/info?slug=infrastructure_operations_management/vmware_vcenter_converter_standalone/5_5">vSphere Standalone Converter</a></h3>
+<p>Not strictly a backup solution, this tool converts physical machines to virtual machines and permits conversion between vm formats.</p>
+<h3 id="xsi-backup"><a href="https://33hops.com/xsibackup-vmware-esxi-backup.html">XSI Backup</a></h3>
+<p>Compatible with both free and commercial versions of VMWare ESXi, from ESXi 5.1 upwards.</p>
+<h3 id="export-vapp-vsphere-powercli"><a href="https://www.vmware.com/support/developer/PowerCLI/PowerCLI51/html/Export-VApp.html">Export-VApp - vSphere PowerCLI</a></h3>
+<p>Exports a vApp or a single virtual machine as an .OVA or .OVF file. Requires installation of <a href="https://www.vmware.com/support/developer/PowerCLI/">PowerCLI</a>.</p>
+<h3 id="backuppc"><a href="https://backuppc.github.io/backuppc">BackupPC</a></h3>
+<p>A simple level file level backup manager. Supports compression and deduplication. Runs great from <a href="https://hub.docker.com/r/adferrand/backuppc/">Docker</a></p>
+<h3 id="restic"><a href="https://restic.net/">Restic</a></h3>
+<p>restic is a backup program that is fast, efficient and secure. It supports the three major operating systems (Linux, macOS, Windows) and a few smaller ones (FreeBSD, OpenBSD).</p>
+<h2 id="documentation">Documentation</h2>
+<h3 id="dokuwiki"><a href="https://www.dokuwiki.org/dokuwiki#">DokuWiki</a></h3>
+<p>A simple to use and highly versatile Open Source wiki software that doesn't require a database.</p>
+<h3 id="gollum"><a href="https://github.com/gollum/gollum">gollum</a></h3>
+<p>A simple, Git-powered wiki with a sweet API and local frontend.</p>
+<h3 id="bookstack"><a href="https://www.bookstackapp.com/">BookStack</a></h3>
+<p>A simple, self-hosted, easy-to-use platform for organizing and storing information.</p>
+<h3 id="phpipam"><a href="http://phpipam.net/">phpIPAM</a></h3>
+<p>An open-source web IP address management application (IPAM).</p>
+<h3 id="paperwork-paperwork-github"><a href="https://openpaper.work/en/">Paperwork</a> / <a href="https://gitlab.gnome.org/World/OpenPaperwork/paperwork">Paperwork GitHub</a></h3>
+<p>Aims to be an open-source, self-hosted alternative to services like Evernote ®, Microsoft OneNote ® or Google Keep ®.</p>
+<h3 id="confluence"><a href="https://www.atlassian.com/software/confluence">Confluence</a></h3>
+<p>Feature rich wiki software. Costs $10 (one time cost) and can be integrated with Atlassian's other software such as Jira and HipChat. Support for Atlassian server products ends on February 2, 2024</p>
+<h3 id="mediawiki"><a href="https://www.mediawiki.org/wiki/MediaWiki">MediaWiki</a></h3>
+<p>MediaWiki is a free and open source software wiki package written in PHP, originally for use on Wikipedia.</p>
+<h2 id="network-diagrams">Network Diagrams</h2>
+<h3 id="diagramsnet-formerly-drawio"><a href="https://app.diagrams.net/">diagrams.net (formerly draw.io)</a></h3>
+<p>Free online diagram creating with export/save functions!</p>
+<h3 id="gliffy"><a href="https://www.gliffy.com/">Gliffy</a></h3>
+<p>Create professional-quality Flowcharts, Wireframes, UML diagrams, and more.</p>
+<h3 id="rackdiag">rackdiag</h3>
+<p>Simple diagrams for racks.</p>
+<h3 id="blockdiag"><a href="http://blockdiag.com/en/">blockdiag</a></h3>
+<p>Simple diagrams for networks.</p>
+<h3 id="racktables"><a href="http://racktables.org/">RackTables</a></h3>
+<p>A nifty and robust solution for data center and server room asset management.</p>
+<h3 id="yed-graph-editor"><a href="https://www.yworks.com/products/yed">yEd Graph Editor</a></h3>
+<p>A powerful desktop application that can be used to quickly and effectively generate high-quality diagrams.</p>
+<h2 id="dashboards">Dashboards</h2>
+<h3 id="netdata"><a href="https://github.com/firehol/netdata/">Netdata</a></h3>
+<h3 id="prtg_1"><a href="https://www.paessler.com/prtg">PRTG</a></h3>
+<p>Offers 100 sensors for free. </p>
+<h3 id="kibana"><a href="https://www.elastic.co/products/kibana">Kibana</a></h3>
+<p>Integrates with Elasticsearch and Logstash to form the <a href="https://www.elastic.co/webinars/introduction-elk-stack">ELK stack</a>.</p>
+<h3 id="grafana"><a href="http://grafana.org/">Grafana</a></h3>
+<h3 id="freeboard"><a href="https://freeboard.io/">freeboard</a></h3>
+<h3 id="jumpsquares"><a href="http://www.jumpsquares.net/">JumpSquares</a></h3>
+<h3 id="sexigraf"><a href="http://www.sexigraf.fr/">SexiGraf</a></h3>
+<p>Baked in with Grafana and support for vCenter.</p>
+<h3 id="sexilog"><a href="http://www.sexilog.fr/">SexiLog</a></h3>
+<h2 id="ip-address-and-infrastructure-management">IP Address and Infrastructure Management</h2>
+<h3 id="netbox"><a href="https://netbox.readthedocs.io/en/stable/">NetBox</a></h3>
+<p>Web based IP Address management and infrastructure management developed by DigitalOcean. Extremely easy to install using Docker containers. <a href="https://github.com/digitalocean/netbox">GitHub repo is located here</a></p>
+<h3 id="phpipam_1"><a href="http://phpipam.net/">phpIPAM</a></h3>
+<p>Open source IP address management</p>
+<h3 id="teemip"><a href="http://www.combodo.com/teemip-194">TEEMIP</a></h3>
+<p>TeemIp is an Open Source web 2.0 application that enables professional IP Management activity within IT departments of all sizes.
+It provides to network administrators a simple and powerfull toolset to manage their IPv4 and IPv6 plans, subnet space and IPs in accordance with best in class IP management practices.</p>
+<h3 id="nipap"><a href="http://spritelink.github.io/NIPAP/">NIPAP</a></h3>
+<p>Python based IPAM software utilizing postgresql's powerful ipaddr column type. Powerful features include tagging, allocation pools, and a powerful search feature.  nipap is a sleek, intuitive and powerful IP address management system built to handle large amounts of IP addresses.</p>
+<h3 id="nsot"><a href="https://github.com/dropbox/nsot">NSoT</a></h3>
+<p>Network Source of Truth (NSoT) a source of truth database and repository for tracking inventory and metadata of network entities to ease management and automation of network infrastructure.  NSoT is an API-first application that provides a REST API and a web application front-end for managing IP addresses (IPAM), network devices, and network interfaces.</p>
+<h3 id="splunk_1"><a href="http://splunk.com/">Splunk</a></h3>
+<p>Splunk can ingest system data and logs and allow you to graph them. Deployment is simple, but configuring monitoring can be complex, but incredibly flexible. They offer 500mb/day free tier.</p>
+<h2 id="more-ideas">More ideas</h2>
+<h3 id="awesome-selfhosted"><a href="https://github.com/Kickball/awesome-selfhosted">Awesome Selfhosted</a></h3>
+<p>This is a list of Free Software network services and web applications which can be hosted locally.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

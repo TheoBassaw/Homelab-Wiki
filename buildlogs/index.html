@@ -1,0 +1,1491 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://mydomain.org/buildlogs/">
+      
+      
+        <link rel="prev" href="../dbbtu/">
+      
+      
+        <link rel="next" href="../faq/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Build Logs. - The Homelab Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#build-logs" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="The Homelab Wiki" class="md-header__button md-logo" aria-label="The Homelab Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            The Homelab Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Build Logs.
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="The Homelab Wiki" class="md-nav__button md-logo" aria-label="The Homelab Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    The Homelab Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rules of /r/homelab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    An Introduction to Homelabs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Homelab Software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Homelab Hardware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../buyingguide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The New Homelabber's Guide to Buying Used Gear
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking buying guide, tips and tricks.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorials and How-To's
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vendors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vendors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dbbtu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sound Levels, Heat and Power
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build Logs.
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build Logs.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-post-here" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to post here:
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to post here:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#title-link" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [Title] (Link)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#muffins-crazy-storage-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Muffin's Crazy Storage Build!
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-build-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Build logs:
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Build logs:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wheredoifocuss-homelab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WhereDoIFocus's homelab
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comdude678s-homelab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comdude678's Homelab
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#swatlords-homelab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Swatlord's homelab
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#homelab-of-alexandru" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Homelab of Alexandru
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vrelks-home-lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vrelks' Home Lab
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#profanemonkeycapers-homelab-learning-experiment-thingy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ProfaneMonkeyCapers' Homelab learning experiment thingy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fireflowerists-nas-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FireFlowerist's NAS server
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stones-baller-on-a-budget-mac-pro-lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        stone's baller on a budget Mac Pro lab
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#djs-budget-lab-quest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DJ's Budget Lab Quest
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wgnzillas-home-lab-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WgnZilla's Home Lab Build
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#g30rg3ds-adventures-in-ops-land" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        G30RG3D's Adventures in Ops land
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ga_rhca-build-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GA_RHCA Build Log
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dystopiaguy-build-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DystopiaGuy Build Log
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rathinosks-new-rack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rathinosk's New Rack
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frankenlab-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        frankenlab log
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#omega-kiras-home-labproduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Omega Kira's Home Lab/Production
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#epics-lab-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Epic's Lab Log
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hellowfrs-small-lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HellowFR's small-lab
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#systos-mnlab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Systo's mnLab
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thenes-first-homelab-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        thenes: First HomeLab Build!
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technically-underwoods-homelab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technically Underwood's HomeLab
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#its_theboys-homelab-evolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        its_theboy's Homelab Evolution
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../megaposts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Megaposts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-post-here" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to post here:
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to post here:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#title-link" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [Title] (Link)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#muffins-crazy-storage-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Muffin's Crazy Storage Build!
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-build-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Build logs:
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Build logs:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wheredoifocuss-homelab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WhereDoIFocus's homelab
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comdude678s-homelab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comdude678's Homelab
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#swatlords-homelab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Swatlord's homelab
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#homelab-of-alexandru" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Homelab of Alexandru
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vrelks-home-lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vrelks' Home Lab
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#profanemonkeycapers-homelab-learning-experiment-thingy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ProfaneMonkeyCapers' Homelab learning experiment thingy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fireflowerists-nas-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FireFlowerist's NAS server
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stones-baller-on-a-budget-mac-pro-lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        stone's baller on a budget Mac Pro lab
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#djs-budget-lab-quest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DJ's Budget Lab Quest
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wgnzillas-home-lab-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WgnZilla's Home Lab Build
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#g30rg3ds-adventures-in-ops-land" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        G30RG3D's Adventures in Ops land
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ga_rhca-build-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GA_RHCA Build Log
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dystopiaguy-build-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DystopiaGuy Build Log
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rathinosks-new-rack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rathinosk's New Rack
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frankenlab-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        frankenlab log
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#omega-kiras-home-labproduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Omega Kira's Home Lab/Production
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#epics-lab-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Epic's Lab Log
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hellowfrs-small-lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HellowFR's small-lab
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#systos-mnlab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Systo's mnLab
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thenes-first-homelab-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        thenes: First HomeLab Build!
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technically-underwoods-homelab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technically Underwood's HomeLab
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#its_theboys-homelab-evolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        its_theboy's Homelab Evolution
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="build-logs">Build Logs.</h1>
+<hr />
+<h2 id="how-to-post-here">How to post here:</h2>
+<p>The following is how build logs should be presented, please see the sytax, copy-pasta and edit as required. To generate a link for your post please simply add another breadcrumb to the www.reddit.com/r/homelab/wiki/buildlogs/[YOUR.URL.HERE] URL and you will be prompted to create the page. </p>
+<p><strong>New build logs should be posted above older ones.</strong></p>
+<p><strong>URLs must be in the following format:</strong> BL+[Reddit Username]+[Build Post Number] = www.reddit.com/r/homelab/wiki/buildlogs/BLMonsterMufffin01</p>
+<h3 id="title-link">[Title] (Link)</h3>
+<ul>
+<li>Date posted:</li>
+<li>Date updated:</li>
+<li>Username:</li>
+<li>Build description:</li>
+</ul>
+<p>So my first build log post would be placed in here like this:</p>
+<h3 id="muffins-crazy-storage-build"><a href="https://www.reddit.com/r/homelab/wiki/buildlogs/BLMonsterMufffin01">Muffin's Crazy Storage Build!</a></h3>
+<ul>
+<li>Date posted: 09/09/2016</li>
+<li>Date updated: 09/09/2016</li>
+<li>Username: /u/MonsterMuffffin</li>
+<li>Build description: My crazy storage build that I blah blah.... </li>
+</ul>
+<hr />
+<h2 id="user-build-logs">User Build logs:</h2>
+<h3 id="wheredoifocuss-homelab"><a href="https://www.reddit.com/r/homelab/wiki/buildlogs/BLwheredoifocus01">WhereDoIFocus's homelab</a></h3>
+<ul>
+<li>Date posted: 12/01/2023</li>
+<li>Date updated: 12/01/2023</li>
+<li>Username: /u/wheredoifocus</li>
+<li>Build description: My 3D printed Mini ITX homelab server rack.</li>
+</ul>
+<h3 id="comdude678s-homelab"><a href="https://www.reddit.com/r/homelab/wiki/buildlogs/Comdude67801">Comdude678's Homelab</a></h3>
+<ul>
+<li>Date posted: 17 Mar 2021</li>
+<li>Date updated: 30 Mar 2021</li>
+<li>Username: /u/comdude678 </li>
+<li>Build description: Enthusiast's Pandemic Playground Homelab</li>
+</ul>
+<h3 id="swatlords-homelab"><a href="https://www.reddit.com/r/homelab/wiki/buildlogs/BLswatlord01">Swatlord's homelab</a></h3>
+<ul>
+<li>Date posted: 19 Sep 2016</li>
+<li>Date updated: 23 Apr 2020</li>
+<li>Username: /u/swatlord </li>
+<li>Build description: Home-based testing, playground, and entertainment environment.</li>
+</ul>
+<h3 id="homelab-of-alexandru"><a href="https://www.reddit.com/r/homelab/wiki/buildlogs/bl_alexandru_01">Homelab of <em>Alexandru</em></a></h3>
+<ul>
+<li>Date posted: 15/10/2019</li>
+<li>Date updated: 15/10/2019</li>
+<li>Username: /u/<em>Alexandru</em></li>
+<li>Build description: A beginner in the domain of IT, I want to build a homelab to enhance my knowledge</li>
+</ul>
+<h3 id="vrelks-home-lab"><a href="https://confluence.vrelk.com/pages/viewrecentblogposts.action?key=PB">Vrelks' Home Lab</a></h3>
+<ul>
+<li>Date posted: 03/10/2019</li>
+<li>Date updated: 03/10/2019</li>
+<li>Username: /u/vrelk</li>
+<li>Build description: I am an IT student that likes to spend way too much money on computers and networking equipment.</li>
+</ul>
+<h3 id="profanemonkeycapers-homelab-learning-experiment-thingy"><a href="https://www.reddit.com/r/homelab/wiki/buildlogs/blprofanemonkeycapers01">ProfaneMonkeyCapers' Homelab learning experiment thingy</a></h3>
+<ul>
+<li>Date posted: February 26, 2019</li>
+<li>Date updated: March 09, 2019</li>
+<li>Username: /u/ProfaneMonkeyCapers </li>
+<li>Build description: Low clue non-IT guy makes large plans with small skill. What could go wrong?</li>
+</ul>
+<h3 id="fireflowerists-nas-server"><a href="https://www.reddit.com/r/homelab/wiki/buildlogs/blfireflowerist01">FireFlowerist's NAS server</a></h3>
+<ul>
+<li>Date posted: December/13/2018</li>
+<li>Date updated: October/1/2019</li>
+<li>Username: /u/FireFlowerist</li>
+<li>Build description: Dell R410 with 9 drives, Do-it-all home server journal, ROMUSERVERI 1</li>
+</ul>
+<h3 id="stones-baller-on-a-budget-mac-pro-lab"><a href="https://www.reddit.com/r/homelab/wiki/buildlogs/stoneobscurity">stone's baller on a budget Mac Pro lab</a></h3>
+<ul>
+<li>Date posted: March/27/2018</li>
+<li>Date updated: March/27/2018</li>
+<li>Username: /u/stoneobscurity /u/stone-sfw</li>
+<li>Build description: mac pro tower based lab, ESXi, FreeNAS as a VM, separate IOT subnet, etc.</li>
+</ul>
+<h3 id="djs-budget-lab-quest"><a href="https://www.reddit.com/r/homelab/wiki/buildlogs/bldjtrainr3k01">DJ's Budget Lab Quest</a></h3>
+<ul>
+<li>Date posted: 23/1/2018</li>
+<li>Date updated: 23/1/2018</li>
+<li>Username: /u/DJ-TrainR3k</li>
+<li>Build description: The mad musings of my quest to run a lab and save money (that I don't have).</li>
+</ul>
+<h3 id="wgnzillas-home-lab-build"><a href="https://www.reddit.com/r/homelab/wiki/buildlogs/BLWgnZilla01">WgnZilla's Home Lab Build</a></h3>
+<ul>
+<li>Date Posted: 20/11/2017</li>
+<li>Date Updated: 20/11/2017</li>
+<li>Username: /u/WgnZilla</li>
+<li>Build Description: HomeLab/Test Lab &amp; Dedicated Server room build.</li>
+</ul>
+<h3 id="g30rg3ds-adventures-in-ops-land"><a href="https://www.reddit.com/r/homelab/wiki/create/buildlogs/blg30rg3d01">G30RG3D's Adventures in Ops land</a></h3>
+<ul>
+<li>Date posted: 11/18/2017</li>
+<li>Date updated: 11/18/2017</li>
+<li>Username: G30RG3D</li>
+<li>Build description: A more literal approach to a build log. </li>
+</ul>
+<h3 id="ga_rhca-build-log"><a href="https://www.reddit.com/r/homelab/wiki/create/buildlogs/blga_rhca001">GA_RHCA Build Log</a></h3>
+<ul>
+<li>Date Posted :   07.21.2017</li>
+<li>Date Updated : 07.21.2017</li>
+<li>Username : /u/GA_RHCA </li>
+<li>Build Description : My journey into IT and working towards a position working as a Linux Engineer.</li>
+</ul>
+<h3 id="dystopiaguy-build-log"><a href="https://www.reddit.com/r/homelab/wiki/buildlogs/bldystopiaguy01">DystopiaGuy Build Log</a></h3>
+<ul>
+<li>Date posted: 6/2/2017</li>
+<li>Date updated: 6/19/2017</li>
+<li>Username: DystopiaGuy</li>
+<li>Build description: The move from an old desktop to a proper server.</li>
+</ul>
+<h3 id="rathinosks-new-rack"><a href="https://www.reddit.com/r/homelab/wiki/buildlogs/BLRathinosk01">Rathinosk's New Rack</a></h3>
+<ul>
+<li>Date posted: 4/3/2017</li>
+<li>Date updated: 12/23/2019</li>
+<li>Username: /u/Rathinosk</li>
+<li>Build description: After many years running a rag-tag collection of miscellaneous hardware in my living room, I am upgrading to a proper lab system in it's own room in the basement</li>
+</ul>
+<h3 id="frankenlab-log"><a href="https://www.reddit.com/r/homelab/wiki/buildlogs/BLTANKtr0n01">frankenlab log</a></h3>
+<ul>
+<li>Date posted: 11/17/2016</li>
+<li>Date updated: 06/27/2017</li>
+<li>Username: /u/TANKtr0n</li>
+<li>Build description: My collection of some things old, some things new, mostly big-box Enterprise gear that I've acquired. I call it the Frankenlab. </li>
+</ul>
+<h3 id="omega-kiras-home-labproduction"><a href="https://www.reddit.com/r/homelab/wiki/buildlogs/BLomegakira01">Omega Kira's Home Lab/Production</a></h3>
+<ul>
+<li>Date posted: 11/11/2016</li>
+<li>Date updated: 1/4/2019</li>
+<li>Username: /u/omegakira</li>
+<li>Build description: Oh dear Lord, he's taken over the internets</li>
+</ul>
+<h3 id="epics-lab-log"><a href="https://www.reddit.com/r/homelab/wiki/buildlogs/epiclyepicethan1">Epic's Lab Log</a></h3>
+<ul>
+<li>Date posted: 11/07/2016</li>
+<li>Date updated: 11/07/2016</li>
+<li>Username: /u/EpiclyEpicEthan1</li>
+<li>Build description: Started to give myself a little more legroom for self-hosted things and learn about networking.</li>
+</ul>
+<h3 id="hellowfrs-small-lab"><a href="https://www.reddit.com/r/homelab/wiki/buildlogs/hellowfr01">HellowFR's small-lab</a></h3>
+<ul>
+<li>Date posted: 2016/09/15</li>
+<li>Date updated: 2016/09/15</li>
+<li>Username: /u/HellowFR</li>
+<li>Build description: My first homelab iteration, currently living under my desk</li>
+</ul>
+<h3 id="systos-mnlab"><a href="https://www.reddit.com/r/homelab/wiki/buildlogs/blSysto">Systo's mnLab</a></h3>
+<ul>
+<li>Date posted: 2016/09/10</li>
+<li>Date updated: 2016/09/11</li>
+<li>Username: /u/systo_</li>
+<li>Build description: My build log as I get neck deep into KVM, PF, iSCSI, and OSPF.</li>
+</ul>
+<h3 id="thenes-first-homelab-build"><a href="https://www.reddit.com/r/homelab/wiki/buildlogs/BLthenes01">thenes: First HomeLab Build!</a></h3>
+<ul>
+<li>Date posted: 09/09/2016</li>
+<li>Date updated: 09/09/2016</li>
+<li>Username: /u/thenes</li>
+<li>Build description: Initially it was just supposed to help me learn more about <a href="https://www.visualstudio.com/en-us/products/tfs-overview-vs.aspx">Team Foundation Server</a> but then it just kept growing...</li>
+</ul>
+<h3 id="technically-underwoods-homelab"><a href="https://www.reddit.com/r/homelab/wiki/create/buildlogs/bltechnicallyunderwood01">Technically Underwood's HomeLab</a></h3>
+<ul>
+<li>Date posted: 10/13/2021  </li>
+<li>Date updated: 10/13/2021 </li>
+<li>Username: /u/technicallyunderwood  </li>
+<li>Build description: Testing and training lab for expanding engineering skills.</li>
+</ul>
+<h3 id="its_theboys-homelab-evolution"><a href="https://www.reddit.com/r/homelab/wiki/buildlogs/blits_theboy">its_theboy's Homelab Evolution</a></h3>
+<ul>
+<li>Date posted: 1/19/2022</li>
+<li>Date updated: 1/19/2022</li>
+<li>Username: /u/its_theboy</li>
+<li>Build Description: From 0-100. From hobby to obsession.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

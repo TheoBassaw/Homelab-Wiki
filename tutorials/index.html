@@ -1,0 +1,1472 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://mydomain.org/tutorials/">
+      
+      
+        <link rel="prev" href="../networking/">
+      
+      
+        <link rel="next" href="../resources/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Tutorials and How-To's - The Homelab Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tutorials-and-how-tos" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="The Homelab Wiki" class="md-header__button md-logo" aria-label="The Homelab Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            The Homelab Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tutorials and How-To's
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="The Homelab Wiki" class="md-nav__button md-logo" aria-label="The Homelab Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    The Homelab Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rules of /r/homelab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    An Introduction to Homelabs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Homelab Software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Homelab Hardware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../buyingguide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The New Homelabber's Guide to Buying Used Gear
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking buying guide, tips and tricks.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorials and How-To's
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorials and How-To's
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#snmp-quick-setup-on-debian-based-machines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SNMP Quick Setup on Debian based machines
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unlocking-a-r720xd-google-t4-appliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unlocking a R720XD Google T4 appliance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ups-auto-shutdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UPS AUTO SHUTDOWN
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UPS AUTO SHUTDOWN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#safety-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SAFETY FIRST
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qnap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QNAP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proxmox" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Proxmox
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vmware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VMWare
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#freenas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FreeNAS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#drobo-pro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Drobo Pro
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#downloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Downloads
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-microsoft-certificate-authority-for-smart-card-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting up Microsoft Certificate Authority for Smart Card authentication
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-nextcloud-on-ubuntu-1604-with-apache2-letsencrypt-redis-and-apcu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installing NextCloud on Ubuntu 16.04 with Apache2, LetsEncrypt, Redis, and APCU.
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-nginx-reverse-proxy-with-lets-encrypt-certificates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting up Nginx reverse proxy with Let's Encrypt certificates.
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-guacamole-0913-on-ubuntu-1604-lts-with-mysql-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installing Guacamole 0.9.13 on Ubuntu 16.04 LTS with MySQL Authentication
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#router-on-a-stick-with-pfsense" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Router on a stick with pfSense
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ups-server-on-raspberry-pi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UPS server on Raspberry Pi
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-non-hp-drives-in-proliant-g5g6g7-without-the-fans-spinning-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to use non-HP drives in ProLiant G5/G6/G7 without the fans spinning up
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-canshould-i-do-whilst-labbing-active-directory-and-windows-at-home" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What can/should I do whilst labbing Active Directory and Windows at home?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-very-detailed-build-log-and-tutorial-on-the-60tb-freenas-server-i-put-together-a-few-months-ago" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A very detailed build log and tutorial on the 60TB FreeNAS server I put together a few months ago
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-reverse-airflow-in-a-cisco-c3750x-fan-module-c3kx-fan-23cfm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to Reverse Airflow in a Cisco C3750X Fan Module (C3KX-FAN-23CFM)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grafanainfluxdb-tutorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grafana/InfluxDB Tutorial
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#activating-windows-server-skus-and-hyper-v-vms-with-avma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activating Windows Server SKUs and Hyper-V VMs with AVMA.
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nutanix-ce-guides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nutanix CE Guides
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vendors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vendors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dbbtu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sound Levels, Heat and Power
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../buildlogs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build Logs.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../megaposts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Megaposts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#snmp-quick-setup-on-debian-based-machines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SNMP Quick Setup on Debian based machines
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unlocking-a-r720xd-google-t4-appliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unlocking a R720XD Google T4 appliance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ups-auto-shutdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UPS AUTO SHUTDOWN
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UPS AUTO SHUTDOWN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#safety-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SAFETY FIRST
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qnap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QNAP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proxmox" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Proxmox
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vmware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VMWare
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#freenas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FreeNAS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#drobo-pro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Drobo Pro
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#downloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Downloads
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-microsoft-certificate-authority-for-smart-card-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting up Microsoft Certificate Authority for Smart Card authentication
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-nextcloud-on-ubuntu-1604-with-apache2-letsencrypt-redis-and-apcu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installing NextCloud on Ubuntu 16.04 with Apache2, LetsEncrypt, Redis, and APCU.
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-nginx-reverse-proxy-with-lets-encrypt-certificates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting up Nginx reverse proxy with Let's Encrypt certificates.
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-guacamole-0913-on-ubuntu-1604-lts-with-mysql-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installing Guacamole 0.9.13 on Ubuntu 16.04 LTS with MySQL Authentication
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#router-on-a-stick-with-pfsense" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Router on a stick with pfSense
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ups-server-on-raspberry-pi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UPS server on Raspberry Pi
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-non-hp-drives-in-proliant-g5g6g7-without-the-fans-spinning-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to use non-HP drives in ProLiant G5/G6/G7 without the fans spinning up
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-canshould-i-do-whilst-labbing-active-directory-and-windows-at-home" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What can/should I do whilst labbing Active Directory and Windows at home?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-very-detailed-build-log-and-tutorial-on-the-60tb-freenas-server-i-put-together-a-few-months-ago" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A very detailed build log and tutorial on the 60TB FreeNAS server I put together a few months ago
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-reverse-airflow-in-a-cisco-c3750x-fan-module-c3kx-fan-23cfm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to Reverse Airflow in a Cisco C3750X Fan Module (C3KX-FAN-23CFM)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grafanainfluxdb-tutorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grafana/InfluxDB Tutorial
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#activating-windows-server-skus-and-hyper-v-vms-with-avma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activating Windows Server SKUs and Hyper-V VMs with AVMA.
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nutanix-ce-guides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nutanix CE Guides
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="tutorials-and-how-tos">Tutorials and How-To's</h1>
+<p>This is a work-in-progress for now, take what you see here with a grain of salt.</p>
+<h2 id="snmp-quick-setup-on-debian-based-machines">SNMP Quick Setup on Debian based machines</h2>
+<pre><code>sudo apt-get install snmpd
+sudo mv /etc/snmp/snmpd.conf  /etc/snmp/snmpd.conf.org
+sudo nano /etc/snmp/snmpd.conf
+</code></pre>
+<p>rocommunity  public</p>
+<p>syslocation  "Reddit"</p>
+<p>syscontact  admin@reddit.com</p>
+<pre><code>sudo nano /etc/default/snmpd
+</code></pre>
+<p>#SNMPDOPTS='-Lsd -Lf /dev/null -u snmp -I -smux -p /var/run/snmpd.pid 127.0.0.1'</p>
+<p>SNMPDOPTS='-Lsd -Lf /dev/null -u snmp -I -smux -p /var/run/snmpd.pid -c /etc/snmp/snmpd.conf'</p>
+<pre><code>sudo nano /etc/init.d/snmpd restart
+</code></pre>
+<h2 id="unlocking-a-r720xd-google-t4-appliance">Unlocking a R720XD Google T4 appliance</h2>
+<p>If you're considering an R710, an R720XD would likely be a better choice. </p>
+<p>If you've acquired one of these it's easy to reset the bios password and make it a standard R720XD.</p>
+<p><strong>Resetting the BIOS password</strong></p>
+<p>Download the ISO from this <a href="https://www.dell.com/support/home/us/en/04/drivers/driversdetails?driverid=0xm0c">link</a>: And make it bootable with Rufus. </p>
+<p>Boot the server off the usb (should do it automatically) And let the updates finish.</p>
+<p>The BIOS should be updated to the newest version, along with the firmware for all other system components. There's a jumper near the PSU/behind the CPU's. Set it to reset the password (since you ran the update disc the BIOS will recognize the jumpers)</p>
+<p>http://i.imgur.com/WpRzszb.png</p>
+<p>Don't forget to move the jumpers back to where they were after the password has been cleared.</p>
+<p>Now you're done. Throw in the drives and create a new array! </p>
+<p><strong>(Optional) Removing the Google Branding.</strong></p>
+<p>After following this process, the system will be identified as a Dell R720XD DBE. The Dell boot logo will be restored, along with the iDRAC and software update logos within your OS. </p>
+<p>Another benefit of removing the Google branding is that the DRAC licensing option will be restored, allowing you to apply an iDRAC enterprise key. </p>
+<p>Please note that this change is not currently reversible. There are no known drawbacks to following this procedure.</p>
+<ul>
+<li>Boot the server, and enter the setup menu (press F2 when prompted)</li>
+<li>Select 'iDRAC Settings' and then 'Network'</li>
+<li>Choose one of the onboard NICs to use for iDRAC communication (LOM1-4) and attach it to your network. Enter IP address information further down the page. You won't be able to use the dedicated NIC until an enterprise license has been activated.</li>
+<li>Go back to the previous page and choose 'User Configuration'</li>
+<li>Remove the default Google iDrac username and password and set your own.</li>
+<li>
+<p>Press 'Finish' to apply your settings. You may need to reboot the server for the changes to take effect.</p>
+</li>
+<li>
+<p>Download the compressed Identity module <a href="https://www.dell.com/support/home/us/en/04/Drivers/DriversDetails?driverId=4WYV6">here</a>.</p>
+</li>
+<li>Extract the Identity module.</li>
+<li>Browse to http://ip-address-of-the-iDRAC and enter the credentials that you specified above.</li>
+<li>In the left-hand menu, expand the option 'iDRAC Settings' and choose 'Update and Rollback'</li>
+<li>Choose the extracted Identity module and then 'Upload'</li>
+<li>Under the 'Update Details' section, select your .pm file and 'Install'</li>
+<li>In the left-hand menu, expand the option 'Server' and choose 'Job Queue'</li>
+<li>
+<p>Once the job has completed, reboot the server. The system will come up with the branding again but a message will pop up stating that the branding is being modified. Once complete, your server will reboot and the branding will have gone. You may need to remove power to the server so that the iDRAC can reset properly.</p>
+</li>
+<li>
+<p>You can now apply an iDRAC7 enterprise key. These can be purchased from eBay or from a Dell partner. To apply a 30 day trial, download and boot from the following <a href="http://www.dell.com/support/home/us/en/04/Drivers/DriversDetails?driverId=3NHMY">ISO</a>.</p>
+</li>
+<li>You can pop off the cover for the dedicated NIC and configure the iDRAC to use it instead of one of the LOM ports.</li>
+</ul>
+<h2 id="ups-auto-shutdown">UPS AUTO SHUTDOWN</h2>
+<h3 id="safety-first">SAFETY FIRST</h3>
+<p><strong>Human Safety</strong></p>
+<p><strong>NEVER PULL A POWERED UPS POWER CABLE FROM THE MAINS</strong></p>
+<p>The UPS must <strong>always maintain proper earth grounding</strong> during simulated power outage tests. Use the switch on a power strip in-line between the UPS and the Mains to simulate a power outage. This will keep the ground wire connected at all times. Do not connect your servers to this power strip as it will be turned on and off repeatedly to simulate power outages. </p>
+<p><a href="http://www.apc.com/us/en/faqs/index?page=content&amp;id=FA157422">Grounding Requirements for APC Products</a></p>
+<p><strong>Data Safety</strong></p>
+<p>Connect all servers (or one power supply on dual equipped servers) directly to the Mains. Use a different power strip from the one powering the UPS. The server should <strong>not</strong> be powered by the UPS during the initial software setup. This will reduce the risk of accidental data loss resulting from a hard shutdown as some settings can instruct the UPS to turn off abruptly. </p>
+<p><strong>Simulated Power Outage</strong></p>
+<p>Use the power switch on the power strip inline to the UPS to simulate an outage. Flip the switch and monitor the logs. (e.g. tail -f /var/log/apcupsd.events) The server should begin to notice the loss of power in 30-60 seconds. Make adjustments to your configuration and repeat the tests. Once the shutdown software testing is stable, move the server power cables back to the UPS for final load testing. Adjust the shutdown percentages or shutdown times as needed.</p>
+<h3 id="qnap">QNAP</h3>
+<pre><code>System Settings -&gt; External Device -&gt; UPS
+</code></pre>
+<p><strong>USB</strong></p>
+<p>A USB cable is auto detected. QNAP shows battery percentage on the web GUI page (System Settings / External Device / UPS). Set to "Turn off the server AC after power fails". Tested with an APC Back-Ups RS 700G with included RJ45-&gt;USB cable. </p>
+<pre><code># Settings to check in GUI
+USB Connection
+Turn off the server after the AC power fails for minutes: 1
+</code></pre>
+<p><strong>Network</strong></p>
+<p>IP address of the APC AP9617 network card required. Uses SNMP protocol. Battery runtime populated automatically. Tested with SMART-UPS 1400 &amp; AP9617 card. </p>
+<pre><code># Settings to check in GUI
+SNMP Connection
+IP Address: 10.0.0.5
+Turn off the server after the AC power fails for minutes: 1
+</code></pre>
+<p><strong>Notes</strong></p>
+<p>QNAP took 3+ minutes to shutdown. An event entry was created. A single beep noted the shutdown, but nothing was visible on the QNAP LCD during shutdown. </p>
+<p><a href="http://docs.qnap.com/nas/4.0/en/index.html?ups.htm">QNAP Docs</a></p>
+<h3 id="proxmox">Proxmox</h3>
+<p>Install apcupsd</p>
+<pre><code>apt install apcupsd
+</code></pre>
+<p>Edit the settings in /etc/apcupsd/apcupsd.conf as appropriate for your cable type. </p>
+<pre><code>nano /etc/apcupsd/apcupsd.conf
+</code></pre>
+<p><strong>Serial</strong></p>
+<pre><code>UPSCABLE smart      # gray apc smart cable
+UPSCABLE 940-0095A  # or use the cable part number
+UPSTYPE apcsmart
+DEVICE /dev/ttyS1
+</code></pre>
+<p><strong>Network</strong></p>
+<p>Set DEVICE ip:apc:passphase where passphrase is the Authentication Phrase set from the AP9617 internal web gui System / User Manager (older firmware). Configuration / Shutdown (newer v6.4.0 firmware)</p>
+<pre><code>UPSCABLE ether
+UPSTYPE pcnet
+DEVICE 10.0.0.5:apc:apc1234567890apc
+</code></pre>
+<p><strong>SNMP Network</strong></p>
+<p>DEVICE is hostname:port:vendor:community</p>
+<pre><code>UPSCABLE ether
+UPSTYPE snmp
+DEVICE 10.0.0.5:161:APC:private
+</code></pre>
+<p><strong>USB</strong></p>
+<pre><code>UPSCABLE usb
+UPSTYPE usb
+#DEVICE #device is not needed. UPS is auto detected.
+</code></pre>
+<p><strong>Common Settings</strong></p>
+<pre><code>UPSNAME officeups1  #arbitrary UPS name
+BATTERYLEVEL 50     #Shutdown at 50% power remaining
+MINUTES 5           #Shutdown at 5 minutes power remaining
+TIMEOUT 60          #Shutdown when on battery for 60 seconds - 0 to disable and use percentage
+</code></pre>
+<p><strong>Final Setting</strong></p>
+<p>Then set in /etc/default/apcupsd</p>
+<pre><code>ISCONFIGURED=yes
+</code></pre>
+<p>Reboot or run </p>
+<pre><code>/etc/init.d/apcupsd start
+</code></pre>
+<p><strong>Troubleshooting</strong></p>
+<p>Forgetting to set ISCONFIGURED will result in apcupsd acting like it is not working at all. </p>
+<pre><code>service apcupsd restart           # Restart the service
+tail -f /var/log/apcupsd.events   # Check the logs
+apcaccess                         # Show current apcupsd status
+</code></pre>
+<h3 id="vmware">VMWare</h3>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>APC 9617 Network Card with a fixed IP</li>
+<li>All virtual machines must have VMWare Tools installed</li>
+<li>APC VMWare Appliance with a fixed IP. PowerChute Network Shutdown v4.1 VMWare Virtual Appliance (<a href="http://www.apc.com/tools/download/download.cfm?sw_sku=SFPCNS41-V&amp;software_id=AKRN-9ZPCT8&amp;family=&amp;part_num=SFPCNS41-V&amp;swfam=&amp;tsk=&amp;swtyp=">Download PCNS v4.1</a>) </li>
+</ul>
+<p><strong>Network Card</strong></p>
+<p>Setup a fixed ip address and email notifications. A black APC serial cable may be needed to configure the card. The default apc/apc username and password will work, but an Authentication Phrase must be setup in System / User Manager (older firmware) or Configuration / Shutdown (newer v6.4.0 firmware). I used 'apc1234567890apc', it will be needed in the VM setup. Firewall might need UDP 3052 &amp; TCP 3052, 6547, &amp; 80 opened, but was not needed on a stock ESXi 6.0.0 test. </p>
+<p><strong>Appliance VM</strong></p>
+<p>Install the OVA appliance file using the vSphere Client desktop application. File -&gt; Deploy OVF Template. Once uploaded, start the VM in the Console and configure basic network settings. Reboot for final configuration via web browser. Open https://ipaddress:6547 to access the PCNS web page. Select 'Configure Events'. Enable shutdown in the 'UPS on Battery', 'Runtime remaining below threshold', and 'Battery Discharged shutdown' settings.  </p>
+<p><strong>vSphere settings</strong></p>
+<p>Set the APC Appliance to be first in the Configuration tab -&gt; Virtual Machine Startup/Shutdown -&gt; Properties -&gt; Startup Order as that will make it last to shutdown. Set the Shutdown Action to Guest Shutdown. Make sure all VMs have the VMWare Client Tools installed. Check the Summary tab of each virtual machine to verify.  </p>
+<p><a href="https://www.vmguru.com/2013/06/how-to-shutdown-esxi-host-in-case-of-a-power-failure/">How to: Shutdown ESXi host in case of a power failure</a></p>
+<p><a href="https://www.reddit.com/r/homelab/comments/4ry5n8/powerchuteesxisynology/">How to: Shutdown Synology DSM 6.0 from APC</a></p>
+<h3 id="freenas">FreeNAS</h3>
+<p><strong>USB</strong></p>
+<p>Back-Ups RS700 (BR700G) USB</p>
+<pre><code>Services -&gt; Wrench icon
+Driver: 'APC UPS 2 Back-UPS RS USB USB (usbhid-ups)'
+</code></pre>
+<p>Search for the USB port</p>
+<pre><code>[root@freenas] ~# grep usb /var/log/messages
+Dec 30 20:14:11 freenas ugen1.6: &lt;American Power Conversion&gt; at usbus1
+Dec 30 20:15:53 freenas notifier: Connected to UPS [ups]: usbhid-ups-ups
+
+Port: /dev/ugen1.6   #as found in the search.
+</code></pre>
+<p>The remaining setting can be left at their defaults. User: upsmon Password: fixmepass work fine. Enable Email updates and enter an address. </p>
+<p><strong>To monitor the UPS</strong></p>
+<p>A working battery looks like this.</p>
+<pre><code>[root@freenas] ~# tail -f /var/log/ups.log
+20151230 205553 100 121.0 0 [OL] NA NA
+20151230 210053 100 121.0 0 [OL] NA NA
+20151230 210553 100 122.0 0 [OL] NA NA
+</code></pre>
+<p><strong>Serial</strong></p>
+<p>APC SMART-UPS 1400 using Gray APC 940-0095A Smart Signaling UPS Cable, driver 'APC ups 1 Back-UPS 940-0095A/C cables (genericups upstype=1)' and port '/dev/cuau0'. </p>
+<pre><code>[root@freenas] ~# tail -f /var/log/ups.log
+20151230 223820 NA NA NA [OL] NA NA
+20151230 224320 NA NA NA [OL] NA NA
+</code></pre>
+<p>Note the lack of voltage values, but the Online code OL is present. </p>
+<pre><code>[root@freenas] ~# grep uart /var/log/messages
+Dec 30 16:43:09 freenas uart1: &lt;16550 or compatible&gt; port 0x2f8-0x2ff irq 3 on acpi0
+Dec 30 16:43:09 freenas uart0: &lt;16550 or compatible&gt; port 0x3f8-0x3ff irq 4 flags 0x10 on acpi0
+</code></pre>
+<p>Black APC 940-0024C Smart Signaling UPS cable does not appear to be supported. They appear to be more like null modem cables for use in configuring the network interfaces on AP9617 cards. </p>
+<p><strong>Network</strong></p>
+<pre><code>Driver: APC PDU3 (various) SNMP monitoring card (SNMP-UPS)
+Port: 10.0.0.5 (ip address of APC 9617 card)
+Auxiliary parameters (ups.conf):
+mibs=apcc
+community=public
+</code></pre>
+<h3 id="drobo-pro">Drobo Pro</h3>
+<p>iSCSI connected Drobo Pro to server on a UPS. After your server shuts down, your Drobo device will go into standby mode (orange or yellow power indicator). When your computer shuts down, any data in transit to the Drobo device will be safely transferred to the disks. Your data is safe.</p>
+<h3 id="downloads">Downloads</h3>
+<p><a href="http://lists.alioth.debian.org/pipermail/nut-upsuser/2005-August/000118.html">APC Serial cable Wiring diagrams</a></p>
+<h2 id="setting-up-microsoft-certificate-authority-for-smart-card-authentication">Setting up Microsoft Certificate Authority for Smart Card authentication</h2>
+<p>Smart Cards are a reasonable inexpensive means of hardware-based authentication. You can even find a smart card in your chip-based credit/debit card. However it won't work for our purposes.</p>
+<p>The thing with smart cards is that the driver for the reader doesn't matter as much as the driver for the card itself. I have had good luck with a <a href="https://www.amazon.com/PIVKey-C910-PKI-Smart-Card/dp/B00SJV2CNK/">PivKey C910</a> and a <a href="https://www.amazon.com/Rocketek-RT-SCR1-Military-Compatible-Windows/dp/B00PY0CNYM/">generic smart card reader</a>. Honestly it won't matter what reader you get for the most part. I just got the cheapest one I could find.</p>
+<p>Now, you have to have a Windows environment with Active Directory and an Enterprise certificate authority. This is not a guide on how to install and configure those so I'll leave that bit out for now. This assumes your certificate authority is set up correctly. </p>
+<p>First, open MMC (Win-R, type "mmc" and press enter). In the File menu, add the Certificate Templates and Certification Authority snap-ins. In Certificate Templates, duplicate "Smartcard User" template. Change the OS compatability based on what server and client OS you will be using. Give it an appropriate name and change the validity period to 5 years.</p>
+<p>In the Request Handling tab, make sure the purpose is "Signature and Encryption" and check the box "Include symmetric algorithms allowed by the subject." Also be sure that the "Enroll subject without requiring any user input" is selected.</p>
+<p>In the Cryptography tab, check "Requests must use one of the following providers" and then use "Microsoft Base Smart Card Crypto Provider"</p>
+<p>In the Insssuance tab, check "This number of authorized signatures" and put in 1. Make sure that Policy Type is "Application Policy" and Application Policy is "Certificate Request Agent."</p>
+<p>Next, right click on the "Certificate Templates" node, then select "New" and then select "Certificate Template to Issue". Select the certificate template you just made.</p>
+<p>Next, on a client machine, open MMC and open the Certificate snap-in for My User. In "Personal" request a certificate for "Enrollment Agent." If there is no Enrollment Agent certificate, then use the same steps above to add the existing Enrollment Agent certificate template to the Certification Authority.</p>
+<p>Now you are ready to enroll smart cards. If you are enrolling a card for yourself, request a certificate for the Smart Card template you made earlier, and that's it! Obviously you will want to change the user and admin PIN. To change the user pin, insert the card, press CTRL-ALT-DELETE and select "Change Password". There should be a piece of text that says "Sign-in Options". Press that, select the smart card icon, and there you are. Depending on your smart card your pin will have some restrictions, e.g. for the C910 it has to be 6 characters.</p>
+<h2 id="installing-nextcloud-on-ubuntu-1604-with-apache2-letsencrypt-redis-and-apcu">Installing NextCloud on Ubuntu 16.04 with Apache2, LetsEncrypt, Redis, and APCU.</h2>
+<p><a href="https://vroomtech.io/2016/09/15/installing-nextcloud-on-ubuntu-16-04-lts-with-apache2-lets-encrypt-redis-and-apcu/">Link to vroomtech.io  tutorial</a></p>
+<p><a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-nextcloud-on-ubuntu-16-04">Link to Digital Ocean tutorial</a></p>
+<h2 id="setting-up-nginx-reverse-proxy-with-lets-encrypt-certificates">Setting up Nginx reverse proxy with Let's Encrypt certificates.</h2>
+<p><a href="https://serverfault.com/a/784940">Well written serverfault answer</a></p>
+<p><a href="">Link to part 1</a> [DEAD LINK]</p>
+<p><a href="">Link to part 2</a> [DEAD LINK]</p>
+<h2 id="installing-guacamole-0913-on-ubuntu-1604-lts-with-mysql-authentication">Installing Guacamole 0.9.13 on Ubuntu 16.04 LTS with MySQL Authentication</h2>
+<p><a href="http://chasewright.com/guacamole-with-mysql-on-ubuntu/">Link to Tutorial and Script</a></p>
+<h2 id="router-on-a-stick-with-pfsense">Router on a stick with pfSense</h2>
+<p><a href="https://www.reddit.com/r/homelab/comments/5ntzh4/the_one_ethernet_pfsense_router_vlans_and_you_or">Permalink to homelab post</a></p>
+<h2 id="ups-server-on-raspberry-pi">UPS server on Raspberry Pi</h2>
+<p><a href="https://www.reddit.com/r/homelab/comments/5ssb5h/ups_server_on_raspberry_pi/">Permalink to homelab post</a></p>
+<h2 id="how-to-use-non-hp-drives-in-proliant-g5g6g7-without-the-fans-spinning-up">How to use non-HP drives in ProLiant G5/G6/G7 without the fans spinning up</h2>
+<p>~~<a href="https://redd.it/5zmlpf">Permalink to homelab post</a>~~</p>
+<h2 id="what-canshould-i-do-whilst-labbing-active-directory-and-windows-at-home">What can/should I do whilst labbing Active Directory and Windows at home?</h2>
+<p>~~<a href="https://powernerd.xyz/homelabbing-windows-active-directory/">Link to guide</a>~~</p>
+<p><a href="https://web.archive.org/web/20170403192440/https://powernerd.xyz/homelabbing-windows-active-directory/">archive.org version</a></p>
+<h2 id="a-very-detailed-build-log-and-tutorial-on-the-60tb-freenas-server-i-put-together-a-few-months-ago">A very detailed build log and tutorial on the 60TB FreeNAS server I put together a few months ago</h2>
+<p><a href="https://www.reddit.com/r/homelab/comments/648cbc/a_very_detailed_build_log_and_tutorial_on_the/">Permalink to homelab post</a></p>
+<h2 id="how-to-reverse-airflow-in-a-cisco-c3750x-fan-module-c3kx-fan-23cfm">How to Reverse Airflow in a Cisco C3750X Fan Module (C3KX-FAN-23CFM)</h2>
+<p><a href="https://www.reddit.com/r/homelab/comments/7onneu/a_visual_guide_to_reversing_the_airflow_in_a/">Permalink to homelab post</a></p>
+<h2 id="grafanainfluxdb-tutorial">Grafana/InfluxDB Tutorial</h2>
+<p>[GoogleDocs Link]  (https://docs.google.com/document/d/11TlMypqyeeKK4vLGz9MfcITFMQyIrRjokCdc89YbMAM/edit?usp=sharing)</p>
+<h2 id="activating-windows-server-skus-and-hyper-v-vms-with-avma">Activating Windows Server SKUs and Hyper-V VMs with AVMA.</h2>
+<p>[Permalink to homelab post] (https://www.reddit.com/r/homelab/comments/megxpe/how_to_activating_windows_server_skus_and_hyperv/)</p>
+<h2 id="nutanix-ce-guides">Nutanix CE Guides</h2>
+<p>[Homelab link to part 1]
+(https://www.reddit.com/r/homelab/comments/nibqe1/nutanix_ce_a_installation_guide_startup/)
+[Homelab link to part 2]
+(https://www.reddit.com/r/homelab/comments/niszb6/nutanix_guide_part_2/)</p>
+<p>[NTX Files link] (https://www.reddit.com/r/homelab/comments/nlx33o/nutanix_services_files/)</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

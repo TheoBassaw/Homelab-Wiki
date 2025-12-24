@@ -1,0 +1,1626 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://mydomain.org/networking/">
+      
+      
+        <link rel="prev" href="../buyingguide/">
+      
+      
+        <link rel="next" href="../tutorials/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Networking buying guide, tips and tricks. - The Homelab Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#networking-buying-guide-tips-and-tricks" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="The Homelab Wiki" class="md-header__button md-logo" aria-label="The Homelab Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            The Homelab Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Networking buying guide, tips and tricks.
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="The Homelab Wiki" class="md-nav__button md-logo" aria-label="The Homelab Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    The Homelab Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rules of /r/homelab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    An Introduction to Homelabs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Homelab Software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Homelab Hardware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../buyingguide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The New Homelabber's Guide to Buying Used Gear
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking buying guide, tips and tricks.
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking buying guide, tips and tricks.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#for-beginners" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For Beginners
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-switches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network Switches
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gigabit-switches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gigabit Switches
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gigabit Switches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dell-powerconnect-50006000-series-6224-6248-possibly-p-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dell PowerConnect 5000/6000 series (6224, 6248, possibly P models)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-gigabit-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 Gigabit Info
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10 Gigabit Info">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#10gbe-ethernet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10GbE (Ethernet)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10gb-dac" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10Gb DAC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10gb-fiber" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10Gb Fiber
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10Gb Fiber">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#whats-an-sfp-vs-sfp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What's an SFP vs SFP+?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lr-vs-sr-what-the-hell-is-that" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LR vs SR, what the hell is that?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10gb-active-optical-cable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10Gb Active Optical Cable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#well-what-nics-do-i-need" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Well, what NIC's do I need?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cheap-10gbe-gear" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheap 10GBe Gear?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-gigabit-switches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 Gigabit Switches
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transceiver-and-dac-compatibility-chart-and-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transceiver and DAC Compatibility Chart and Tips
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#infiniband" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Infiniband
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Infiniband">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#infiniband-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Infiniband Standards
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Infiniband Standards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sdr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SDR
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ddr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DDR
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qdr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QDR
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fdr-10fdr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FDR-10/FDR
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#networking-with-infiniband" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Networking with Infiniband
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorials and How-To's
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vendors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vendors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dbbtu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sound Levels, Heat and Power
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../buildlogs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build Logs.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../megaposts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Megaposts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#for-beginners" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For Beginners
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-switches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network Switches
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gigabit-switches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gigabit Switches
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gigabit Switches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dell-powerconnect-50006000-series-6224-6248-possibly-p-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dell PowerConnect 5000/6000 series (6224, 6248, possibly P models)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-gigabit-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 Gigabit Info
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10 Gigabit Info">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#10gbe-ethernet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10GbE (Ethernet)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10gb-dac" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10Gb DAC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10gb-fiber" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10Gb Fiber
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10Gb Fiber">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#whats-an-sfp-vs-sfp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What's an SFP vs SFP+?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lr-vs-sr-what-the-hell-is-that" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LR vs SR, what the hell is that?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10gb-active-optical-cable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10Gb Active Optical Cable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#well-what-nics-do-i-need" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Well, what NIC's do I need?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cheap-10gbe-gear" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheap 10GBe Gear?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-gigabit-switches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 Gigabit Switches
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transceiver-and-dac-compatibility-chart-and-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transceiver and DAC Compatibility Chart and Tips
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#infiniband" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Infiniband
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Infiniband">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#infiniband-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Infiniband Standards
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Infiniband Standards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sdr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SDR
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ddr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DDR
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qdr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QDR
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fdr-10fdr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FDR-10/FDR
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#networking-with-infiniband" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Networking with Infiniband
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="networking-buying-guide-tips-and-tricks">Networking buying guide, tips and tricks.</h1>
+<h2 id="for-beginners">For Beginners</h2>
+<p>information compiled from: https://www.reddit.com/r/homelab/comments/50llv5/best_beginnerfriendly_switches_will_update_wiki/</p>
+<p>To determine what the best switch for you, you need to determine what your requirements are - what kinds of things you want to do with it, how important noise and power consumption is, port speeds, port types, and number of ports. </p>
+<p>The majority of enterprise installations use Cisco switches, so if you want to learn enterprise networking, It's worth considering buying a Cisco switch. The Cisco 3750G is often recommended; which has fans and will pull up to 100 watts (more on PoE versions), has up to 48 ports, and can do "Layer 3 Routing". However, it has no web GUI, so you'll really have to learn Cisco CLI. Note that the Cisco 3750E model has 10GbE, is stackable, and is cheaper, <em>but</em> has "univeral licensing", which means you can't get new features without a subscription. (Note that the default "IP Base" feature set likely will handle anything a homelabber would want it to do.) To get around this constraint, you <em>can</em> buy versions of the 3750E that are running a more full-featured software set.  The key is a model number that ends with -E at the end, for example WS-3750-24PD-E.</p>
+<p>Expect enterprise grade switches to pull 75-100 watts at idle. </p>
+<h2 id="network-switches">Network Switches</h2>
+<p>The best value for money as of October 2017 (if you want to buy a new switch) is the <a href="https://www.amazon.com/TP-Link-JetStream-24-Port-Ethernet-T1700G-28TQ/dp/B01CHP5IAC">TP-Link T1700G-28TQ</a> (Amazon link, you can probably find cheaper) switch. This is a <strong>fanless</strong> (silent!) device, with 24 Gigabit ports, plus 4 10gbit SFP+ ports. It supports VLANS, has a Web UI, and has a similar configuration syntax to Cisco switches.</p>
+<h2 id="gigabit-switches">Gigabit Switches</h2>
+<p>Avaya <a href="https://support.avaya.com/products/P0998/ethernet-routing-switch-3000-series">ERS3500</a>. The baby of the larger Avaya switches. Early versions were re-branded Nortel switches. Interface is maddening (using Chrome pisses it off), but the switches are good options for POE (Power Over Ethernet) devices. Upgrade process requires serial connectivity, and an active Avaya service contract. </p>
+<p>Common Switch Models|Main Ports|Uplink Ports|Modules|Config|Stack|VLANs|PoE|Routing|Watts|Notes
+:--|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:--
+Asus XG-U2008 | 10x 1Gbase-T | 2x 10Gbase-T | - | Unmanaged | - | No | No | No | <em>NEED</em> | <em>NEED</em> | -
+Avaya/Nortel 5510 | 24-48xG | 2xG SFP | No | Both <code>GUI | Yes | Yes | No | Yes | ~150W idle | Worse power usage than 5520
+Avaya/Nortel 5520 | 24-48xG | 4xG SFP | No | Both</code>GUI | Yes | Yes | PoE | Yes | <em>NEED</em> | Better power usage than 5510 with PoE Disabled on unused ports
+Avaya/Nortel 5650TD / TD-PWR | 48xG | 2XG XFP | No | Both `GUI | Yes see 1 | Yes | Non &amp; PoE | Static, OSPF | <em>NEED</em> | Higher-end backplane and stacking throughput than 55xx series
+Cisco 3560G | 24-48xG | 2-4xG SFP | No | CLI | No | Yes | Some PoE | Static, Dynamic | ~60W idle | Cheapest, oldest, cisco Gigabit+L3
+Cisco 3750G | 24-48xG | 2-4xG SFP | No | CLI | Yes | Yes | Some PoE | Static, Dynamic | ~60W idle, roughly 30w per poe phone - 48 port PoE model ~100w idle | Slightly more $$ b/c of stacking
+Cisco 3560-E | 24/48xG | 2 X2 10Gb (convertible to 2x1G SFP) | No | CLI | No | Yes | Some PoE | Static, Dynamic | ~100W idle (48P) | Slightly newer than 3560G, with 10Gig support
+Cisco 3750-E | 24/48xG | 2 X2 10Gb (convertible to 2x1G SFP) | No | CLI | Yes | Yes | Some PoE | Static, Dynamic | <em>NEED</em> | More $$$ because stacking; otherwise same as 3560-E
+Juniper EX2200 | 24-48xG | 4xG SFP | No | CLI &amp; GUI | Virtual chassis | Yes | No | Static, OSPFv2 | ~30W idle, ~70w under heavy load | Cheapest Juniper switch around
+HP 1810-24G | 24xG | 2xG SFP | No | GUI | No | Yes | No | No | 30W Max | Cheap, Fully Passive, No Dynamic LAGGs, Lifetime Warranty
+HP 1910-24G | 24xG | 4xG SFP | No | GUI &amp; CLI* | No | Yes | Some | No | 60W Max | Some models Passive, No Dynamic LAGGs, Lifetime Warranty
+Mikrotik CSS326-24G-2S+RM | 24xG | 2x10G SFP+ | No | GUI | No | Yes | No | No | 19W Max | Unusual Lights, Runs SwOS
+Dell 5524P | 24xG | 2x10G SFP+ | No | CLI &amp; GUI | Yes | Yes | Yes | Static | 39W Non-POE, 380W POE | Loud, Lifetime Waranty
+Dell 6248 | 48xG | 4x1G SFP | Yes | CLI &amp; GUI | Yes | Yes | No | Yes | ~62.5W idle | Stacking modules use CX4 cables, fans on are on the sides. Sunon Fan Mod possible.
+Dell 6248P | 48xG | 4x1G SFP | Yes | CLI &amp; GUI | Yes | Yes | No | Yes | 120W All Ports active Non-POE, 499W all POE on | Stacking modules use CX4 cables, fans on are on the sides. 15.4W POE per port.</p>
+<p>` indicates preferred.</p>
+<h3 id="dell-powerconnect-50006000-series-6224-6248-possibly-p-models">Dell PowerConnect 5000/6000 series (6224, 6248, possibly P models)</h3>
+<p>A fan mod exists to replace the loud stock fans with quieter Sunon MagLev KDE1204PKV3 40x40x20mm fans.  Most youtube videos show two fans being used.  The fans' header pins must be rearranged to work with the unit.</p>
+<h2 id="10-gigabit-info">10 Gigabit Info</h2>
+<p>As mentioned above, the best bang-for-your-buck as of October 2017 is the <a href="https://www.amazon.com/TP-Link-JetStream-24-Port-Ethernet-T1700G-28TQ/dp/B01CHP5IAC">TP-Link T1700G-28TQ</a> switch with 24 gigabit and 4x10gb SFP+ ports.</p>
+<h3 id="10gbe-ethernet">10GbE (Ethernet)</h3>
+<p>10gb Ethernet is not very popular, as it requires significant amounts of power to drive the signal for more than a few meters. Whilst there are a few 10gbE SFP+'s available, none of them are 'standards compliant', as the SFP+ port does not provide enough power, so they will only work over short runs (5-10 meters). It is unusual to find in the wild, as SFP+ DAC (<strong>D</strong>irect <strong>A</strong>ttach <strong>C</strong>oax) cables have become the standard for short (up to 10m) runs.</p>
+<h3 id="10gb-dac">10Gb DAC</h3>
+<p>DAC cables have become the standard way to connect short runs of 10gb Networking. They work with a standard SFP+ port (see below), but are not as fragile as Fibre, and are significantly cheaper.  Due to technical and power limitations, the longest DAC cable you can buy is 10 meters.  DAC cables are also available in 'Passive' or 'Active' designs. A passive design is, technically, roughly equivalent to a standard CAT6 cable. There is no intelligence or amplification/clarification of the signal being passed through the device. This reduces complexity of the DAC, which reduces the price. </p>
+<p>DAC cables 5 meters or over in length should be Active cables. An Active cable rebuilds and cleans up the signal on both ends of the connection, removing interference and reducing load on the switch.  Active cables use significantly more power, and can be up to twice the price of a Passive cable, but for any run 'between racks' you should use an Active cable.  The power usage concerns have turned out to be irrelevant in most devices. The only well-known device that has heat and power limitations (that I, /u/xrobau, know of) is the HPE VC-Flex10 interface card that is used in the C-Class chassis. No other device appears to have limits on the amount of power than can be drawn that is less than the standard requires (eg, all other devices can support fully populated SFP+ ports)</p>
+<p><a href="https://www.fs.com/c/10g-sfp-dac-1114">Link to fs.net examples</a> of DAC cables. They are very common to find on eBay, normally for less than USD$10.</p>
+<h3 id="10gb-fiber">10Gb Fiber</h3>
+<p>This will cover all things 10Gb fiber related, first we have to understand SFP vs SFP+ and the different cards that can be purchased.</p>
+<h5 id="whats-an-sfp-vs-sfp"><strong>What's an SFP vs SFP+?</strong></h5>
+<p>SFP, or Small Form-Factor Pluggable, supports data rates up to 2.5Gbps, but is typically used for 1Gb uplink connections between switches.</p>
+<p>SFP+ is an enhanced version of SFP which supports data rates up to 16Gbps, but is typically used for 10Gbps uplinks on newer switches, and for server NIC cards which support SFP+ modules.</p>
+<h5 id="lr-vs-sr-what-the-hell-is-that"><strong>LR vs SR, what the hell is that?</strong></h5>
+<p>SFP and SFP+ come in two common standards, one is LR - Long Range ; and SR - Short Range. There are others but they are generally for long-haul (think cross-continent) fiber backbones.</p>
+<p>SR Lengths </p>
+<table>
+<thead>
+<tr>
+<th>Fibre type(micrometers)</th>
+<th>Range (m)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OM1 (62.5)</td>
+<td>33</td>
+</tr>
+<tr>
+<td>OM2 (50)</td>
+<td>82</td>
+</tr>
+<tr>
+<td>OM3</td>
+<td>300</td>
+</tr>
+</tbody>
+</table>
+<p>LR Supports up to 40Km; more if signal boosters are used. They do not do as well over short (sub-5 meter) links and will sometimes fail to link up in those cases.</p>
+<p>The most common SFP/SFP+ are SR models unless you specifically look for the LR equivalent. </p>
+<p>SR (Short Range) SFP/SFP+ typically utilize MultiMode Fiber which is cheaper per meter.</p>
+<p>LR (Long Range) SFP/SFP+ typically utilize SingleMode Fiber which allows for far greater transmission distances, but comes at a higher cost per meter. </p>
+<p>For more information on this, please see <a href="http://www.multicominc.com/training/technical-resources/single-mode-vs-multi-mode-fiber-optic-cable/">the link here</a></p>
+<h3 id="10gb-active-optical-cable">10Gb Active Optical Cable</h3>
+<p>These are similar in concept to DAC cables, but instead of using copper, they use fixed fibre. This extends their length from the maximum 10m of DAC cables to 30m. They do not have removable fibre ends, the fibre is part of the entire cable. <a href="http://www.fs.com/c/10g-sfp-aoc-2689">Link to fs.net examples</a></p>
+<h3 id="well-what-nics-do-i-need">Well, what NIC's do I need?</h3>
+<p>Depending on the use, a general all around 10Gb (with SFP+) card will be Chelsio cards, depending on the model such as the T420-CR which supports 2 SFP+'s. It is well favored for use by iXsystems (who make TruNAS and FreeNAS) as well as ESXi,Windows, and OSX.</p>
+<p>I, DXM765 use the Chelsio T420 CR cards in my ESXi hosts and my FreeNAS 9.10 server with no issues, and had it functioning in my Mac Pro 2009 as well without issue; they are pretty solid cards, are cheap (~140$) and the SFP+'s are ~30$ each as cheap as 15$ or so.</p>
+<p>Another commonly used 10G card is the Mellanox ConnectX-2, as are any of the Intel X520 series, though they tend to be pricier. Both have good support under Linux, Windows, and FreeBSD/FreeNAS (though the Mellanox are best used under the most current version).</p>
+<p>The HP NC523SFP NICs are good value second hand, <strong>but be warned</strong>: These cards run VERY hot, and <em>must be in a case with active cooling</em> - this means a normal PC case without an active front-to-back airflow will cause the card to overheat and lock up.  It is possible to find cards with fans on the heatsink, but they are rare.</p>
+<p>From /u/wolffstarr: <a href="https://www.reddit.com/r/homelab/comments/54nsu5/10gb_switch_question/d83keva/">Econo 10GbE Homelab hardware config</a> Oct, 2016</p>
+<h3 id="cheap-10gbe-gear">Cheap 10GBe Gear?</h3>
+<p>Cards:</p>
+<pre><code>HP nc523sfp / p/n: 593715-001
+</code></pre>
+<p>Dirt-cheap dual-SFP card. Doesn't work well at all in Windows 10 (I had boot and shutdown issues with it installed). Also this card gets HOT. I've measured ~85c at the heatsink with only one SR SFP+ module installed.</p>
+<p>Possibly worth it in a well-cooled rackserver (almost like it was designed to be used in one of those, hmm). Hard pass for desktop use.</p>
+<pre><code>Mellanox ConnectX-2 / mnpa19-xtr
+</code></pre>
+<p>Also pretty cheap. Works out of the box for me on vsphere 6.7, Windows 10, Windows Server 2019 and CentOS7. Runs pretty cool to boot, so a great choice imho.</p>
+<p>Fiber SFP's:</p>
+<pre><code>Generic fs.com SR receiver / "Generic Compatible 10GBASE-SR SFP+ 850nm 300m DOM Transceiver Module"
+</code></pre>
+<p>Works out of the box on the Mellanox cards and a Mikrotik CRS305. Autonegotiates to 10Gbe as well, no need to configure anything.</p>
+<pre><code>Finisar Intel FTLX8571D3BCV-IT
+</code></pre>
+<p>I got these because they're cheap at 10$. Unfortunately they didn't work for my setup. Autonegotiation didn't work and the highest I was able to force was 1gbit. 10gbit just gave me no-link errors. It may have to do with Mikrotik's implementation (which is a bit finicky with dual-rate transceivers) but with new generic transceivers at 20 dollars it's probably not worth the hassle.</p>
+<p>Switches</p>
+<pre><code>Mikrotik crs305-1g-4s+in
+</code></pre>
+<p>Works great out of the box and switches at 10GBe no problem. Just don't expect line-speed routing performance. One additional bonus is the 1Gb management port is also switched with the 10Gbe SFP+ ports, which is great if you want to bridge your 10Gb network to the 1Gb network. Earlier reports of poor "downstepping" seem to have been resolved, I get a great 115MB/s from my 10Gb NAS to a 1Gb client.</p>
+<p>From /u/citruspers: Cheap 10GBe gear (information/compatibility) https://www.reddit.com/r/homelab/comments/d86i1x/cheap_10gbe_gear_informationcompatibility/ Sept, 2019</p>
+<p>Graphic: <a href="http://packetlife.net/media/library/22/physical_terminations.pdf">Physical Terminations Guide</a></p>
+<h3 id="10-gigabit-switches">10 Gigabit Switches</h3>
+<p>Common Switch Models|Main Ports|Uplink Ports|Modules|Config|VLANs|Routing|Watts|Noise|Notes
+:--|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:--
+Arista DCS-7124S | 24x SFP+ | - | - | CLI | Yes | Static, Dynamic | ~120W idle | ~64.3 dBa | -
+Arista 7124SX | 24x SFP+ | - | - | CLI | Yes | Static, Dynamic | ~100W idle | ~55 dBa | -
+Cisco Nexus 5010 | 20x SFP+ | - | 1 module slot | CLI | Yes | No | ~280W idle, ~310W under load | <em>NEED</em> | Can also be found as the UCS 6120xp which could be reflashed to Nexus firmware
+Juniper EX4550-32T | 32x Base-T | - | 1x NIC module slot / 1x Virtual Chassis module slot | CLI/GUI | Yes | Static, Dynamic | <em>NEED</em> | <em>NEED</em> | As of 2017, still very expensive
+MikroTik CRS317-1G-16S+ RM | 16x SFP+ | - | - | CLI/GUI | Yes | Static, Dynamic^(1,2) | <em>NEED</em> | <em>NEED</em> | -
+Netgear XS708E v2 | 7x Base-T / 1 Base-T/SFP+ combo | - | - | GUI | Yes | No | <em>NEED</em> | <em>NEED</em> | -
+Ubiquiti ES-16-XG | 12x SFP+ / 4x Base-T^(3) | - | - | CLI/GUI | Yes | Static, Dynamic^(1) | <em>NEED</em> | Passively Cooled | -
+Arista 7050T-36 | 32x Base-T, 4x SFP+ | - | - | CLI | Yes | Static, Dynamic | ~135W idle | ~55 dBa | -</p>
+<ul>
+<li>(1) L3 routing is not full wire-speed (i.e. not capable of 10Gbps routing)</li>
+<li>(2) RouterOS required for routing</li>
+<li>(3) known to have performance issues causing the port to not really work at 10Gbps</li>
+</ul>
+<h3 id="transceiver-and-dac-compatibility-chart-and-tips">Transceiver and DAC Compatibility Chart and Tips</h3>
+<p>(Note: source and destination are arbitrary)</p>
+<table>
+<thead>
+<tr>
+<th>SOURCE</th>
+<th>OPTIC</th>
+<th>CABLE</th>
+<th>OPTIC</th>
+<th>DESTINATION</th>
+<th>Works?</th>
+<th>Notes</th>
+<th>Contributed by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HP CN1000E (ESXi 6.5)</td>
+<td>-</td>
+<td>Cisco SFP-H10GB-CU3M Passive SFP+ DAC</td>
+<td>-</td>
+<td>Netgear GSM7352Sv2 (Port 49, built in SFP+)</td>
+<td>YES</td>
+<td></td>
+<td>/u/dxing97</td>
+</tr>
+<tr>
+<td>HP CN1000E (ESXi 6.5)</td>
+<td>Arista SFP-10G-SRL</td>
+<td>Monoprice 2m OM3 LC-LC Fiber Optic Cable</td>
+<td>Netgear AXM761</td>
+<td>Netgear GSM7352Sv2 (Port 50, built in SFP+)</td>
+<td>YES</td>
+<td></td>
+<td>/u/dxing97</td>
+</tr>
+<tr>
+<td>HP CN1000E (ESXi 6.5)</td>
+<td>Finisar FTLX8571D3BCL</td>
+<td>Monoprice 2m OM3 LC-LC Fiber Optic Cable</td>
+<td>Netgear AXM761</td>
+<td>Netgear GSM7352Sv2 (Port 50, built in SFP+)</td>
+<td>YES</td>
+<td></td>
+<td>/u/dxing97</td>
+</tr>
+<tr>
+<td>HP CN1000E (ESXi 6.5)</td>
+<td>Netgear AXM761</td>
+<td>Monoprice 2m OM3 LC-LC Fiber Optic Cable</td>
+<td>Finisar FTLX8571D3BCL</td>
+<td>Netgear GSM7352Sv2 (Port 50, built in SFP+)</td>
+<td>YES</td>
+<td></td>
+<td>/u/dxing97</td>
+</tr>
+<tr>
+<td>HP CN1000E (ESXi 6.5)</td>
+<td>Netgear AXM761</td>
+<td>Monoprice 2m OM3 LC-LC Fiber Optic Cable</td>
+<td>Arista SFP-10G-SRL</td>
+<td>Netgear GSM7352Sv2 (Port 50, built in SFP+)</td>
+<td>YES</td>
+<td></td>
+<td>/u/dxing97</td>
+</tr>
+<tr>
+<td>HP CN1000E (ESXi 6.5)</td>
+<td>Finisar FTLX8571D3BCL</td>
+<td>Monoprice 2m OM3 LC-LC Fiber Optic Cable</td>
+<td>Arista SFP-10G-SRL</td>
+<td>Netgear GSM7352Sv2 (Port 50, built in SFP+)</td>
+<td>YES</td>
+<td></td>
+<td>/u/dxing97</td>
+</tr>
+<tr>
+<td>HP CN1000E (ESXi 6.5)</td>
+<td>Arista SFP-10G-SRL</td>
+<td>Monoprice 2m OM3 LC-LC Fiber Optic Cable</td>
+<td>Finisar FTLX8571D3BCL</td>
+<td>Netgear GSM7352Sv2 (Port 50, built in SFP+)</td>
+<td>YES</td>
+<td></td>
+<td>/u/dxing97</td>
+</tr>
+<tr>
+<td>Mellanox ConnectX-2 (ESXi 6.5u1)</td>
+<td>Cisco SFP-10G-SR</td>
+<td>2m LC-LC 62.5/125</td>
+<td>Cisco SFP-10G-SR</td>
+<td>Cisco UCS 6120xp</td>
+<td>YES</td>
+<td></td>
+<td>/u/gac64k56</td>
+</tr>
+<tr>
+<td>Mellanox ConnectX-2 (ESXi 6.5u1)</td>
+<td>-</td>
+<td>Cisco SFP-H10GB-CU3M Passive SFP+ DAC</td>
+<td>-</td>
+<td>Cisco UCS 6120xp</td>
+<td>YES</td>
+<td></td>
+<td>/u/gac64k56</td>
+</tr>
+<tr>
+<td>Mellanox ConnectX-2 (ESXi 6.5u1)</td>
+<td>Cisco SFP-10G-SR</td>
+<td>2m LC-LC 62.5/125</td>
+<td>Cisco SFP-10G-SR</td>
+<td>Cisco C3560E-48PD-S</td>
+<td>YES</td>
+<td></td>
+<td>/u/gac64k56</td>
+</tr>
+<tr>
+<td>Mellanox ConnectX-2 (Windows 7)</td>
+<td>Cisco SFP-10G-SR</td>
+<td>Tyco 100m LC-LC 50/125</td>
+<td>Cisco SFP-10G-SR</td>
+<td>Cisco UCS6120xp</td>
+<td>YES</td>
+<td></td>
+<td>/u/gac64k56</td>
+</tr>
+<tr>
+<td>Mellanox ConnectX-2 (Windows 7)</td>
+<td>Cisco SFP-10G-SR</td>
+<td>Tyco 100m LC-LC 50/125</td>
+<td>Cisco X2-10GB-SR</td>
+<td>Cisco C3560E-48PD-S</td>
+<td>YES</td>
+<td></td>
+<td>/u/gac64k56</td>
+</tr>
+<tr>
+<td>Intel i350-T4</td>
+<td>-</td>
+<td>CAT6</td>
+<td>Cisco GLC-T</td>
+<td>Cisco UCS 6120xp</td>
+<td>YES</td>
+<td>You have to specify speed 1000 to activate / use</td>
+<td>/u/gac64k56</td>
+</tr>
+<tr>
+<td>QLogic QLE8152 (Windows Server 2012)</td>
+<td>Cisco SFP-10G-SR</td>
+<td>2m LC-LC 62.5/125</td>
+<td>Cisco X2-10GB-SR</td>
+<td>Cisco UCS6120xp</td>
+<td>YES</td>
+<td>Drivers will install both Ethernet and Fiber Channel interfaces</td>
+<td>/u/gac64k56</td>
+</tr>
+<tr>
+<td>QLogic QLE8152 (Windows Server 2012)</td>
+<td>-</td>
+<td>Cisco SFP-H10GB-CU3M Passive SFP+ DAC</td>
+<td>-</td>
+<td>Cisco UCS6120xp</td>
+<td>YES</td>
+<td>Drivers will install both Ethernet and Fiber Channel interfaces</td>
+<td>/u/gac64k56</td>
+</tr>
+<tr>
+<td>Emulex OCE10102 (ESXi 6.5u1)</td>
+<td>-</td>
+<td>Brocade 3M FCoE Twinax Active SFP+ DAC</td>
+<td>-</td>
+<td>Brocade FCX-624-I (4x10g module installed)</td>
+<td>YES</td>
+<td>-</td>
+<td>/u/klmx30302</td>
+</tr>
+<tr>
+<td>Mellanox ConnectX-2 (ESXi 6.5u1 / Windows 8.1 Pro / Ubuntu 16.04)</td>
+<td>-</td>
+<td>Cisco SFP-H10GB-CU3M Passive SFP+ DAC</td>
+<td>-</td>
+<td>Arista DCS-7124S</td>
+<td>YES</td>
+<td>switch must be configured with <code>enable3px</code></td>
+<td>/u/namodev</td>
+</tr>
+<tr>
+<td>Mellanox ConnectX-2 (Windows 8.1 / Ubuntu 16.04)</td>
+<td>Arista SFP-10G-SRL</td>
+<td>fs.com 30m LC-LC armored OM3</td>
+<td>Arista SFP-10G-SRL</td>
+<td>Arista DCS-7124S</td>
+<td>YES</td>
+<td></td>
+<td>/u/namodev</td>
+</tr>
+<tr>
+<td>Intel X520 (ESXi 6.5u1)</td>
+<td>-</td>
+<td>Ipolex "For Ubiquiti" 0.5m SFP+ DAC</td>
+<td>-</td>
+<td>Arista DCS-7124S</td>
+<td>YES</td>
+<td>switch must be configured with <code>enable3px</code></td>
+<td>/u/namodev</td>
+</tr>
+<tr>
+<td>Intel X520 (ESXi 6.5u1)</td>
+<td>-</td>
+<td>fs.com 2M 10G SFP+ Passive DAC (Arista compatible)</td>
+<td>-</td>
+<td>Arista DCS-7124S</td>
+<td>YES</td>
+<td>-</td>
+<td>/u/namodev</td>
+</tr>
+<tr>
+<td>Broadcom BCM957810A1006G</td>
+<td>Arista SFP-10G-SRL</td>
+<td>Monoprice 2m OM3 LC-LC Fiber Optic Cable</td>
+<td>Finisar FTLX8571D3BCL</td>
+<td>HP 5800-24G-PoE+ (JC099A, H3C branded, HP firmware)</td>
+<td>YES*</td>
+<td>Syslog in HP switch reports "FIBER_SFPMODULE_NOWINVALID" warning, but works anyway, no configuration/commands needed</td>
+<td>/u/dxing97</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Netgear switches generally don't require branded optics (source: fs.com)</li>
+</ul>
+<h2 id="infiniband">Infiniband</h2>
+<p>While Ethernet is considered the gold standard amongst communication at the data-link level, there are other major standards used by a lot of commercial equipment, one of which is Infiniband. For applications that require incredibly high throughput and low latency, I've found that aging Infiniband equipment can be a very cost effective way of providing this connection. Keep in mind that like fibre-channel and Ethernet, Infiniband is a data-link layer protocol. In order to connect Infiniband devices to an ETH/FC network, you'll need some form of router, bridge, or gateway device that can talk both protocols. </p>
+<h3 id="infiniband-standards">Infiniband Standards</h3>
+<h5 id="sdr"><strong>SDR</strong></h5>
+<p>10Gbps connection that uses a CX4 connector. Very old equipment, but very cheap!</p>
+<h5 id="ddr"><strong>DDR</strong></h5>
+<p>DDR Infiniband is the second iteration of the standard. It operates at 20Gbps (16Gbps after throughput loss due to encoding) and uses either CX-4 or QSFP. Most DDR devices I've seen use CX-4. Personal opinion: CX-4 is such an ugly connector. Who designed that? Topspin switches are cheap and cool for learning Infiniband, and most of them operate on this standard.</p>
+<h5 id="qdr"><strong>QDR</strong></h5>
+<p>Switches that operate to this standard usually provide connections rated at a throughput of 40Gbps (32Gbps after encoding loss) and a latency significantly lower than Ethernet's. The connection type for most 40Gb Infiniband is (QSFP+). A lot of newer Mellanox switches offer something they call VPI, which allows configuration on a port by port basis as to which protocol you'd like to use (Ethernet or Infiniband). I personally like this feature, because it allows for flexibility within my lab. </p>
+<p>Before they were bought out by 100 different companies, there was a company called Voltaire that made QDR switches. If you're looking for the cheapest QDR switch you can find, that's probably a route worth exploring.</p>
+<h5 id="fdr-10fdr"><strong>FDR-10/FDR</strong></h5>
+<p>The F stands for F@&amp;% that's expensive! Alternatively it stands for FAST. I run an SX6018 at home. It draws about 40W under a modest load and is the quietest IB switch I've ever owned.</p>
+<h3 id="networking-with-infiniband">Networking with Infiniband</h3>
+<p>Infiniband uses a subnet manager all to its own. Most newer switches come with this feature built-in. This feature will need to be enabled before you can connect hosts to the network. Some of the older switches out there do not have this functionality. If you have a Linux box on your network, you can use your package manager to download "OpenSM." OpenSM is a subnet manager that you can install on a host machine in order to get hooked up to your switch. As far as I'm aware, you should only ever need one machine running the subnet manager in order to connect all of your machines to the switch.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

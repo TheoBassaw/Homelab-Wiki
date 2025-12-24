@@ -1,0 +1,1236 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://mydomain.org/dbbtu/">
+      
+      
+        <link rel="prev" href="../vendors/">
+      
+      
+        <link rel="next" href="../buildlogs/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Sound Levels, Heat and Power - The Homelab Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sound-levels-heat-and-power" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="The Homelab Wiki" class="md-header__button md-logo" aria-label="The Homelab Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            The Homelab Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Sound Levels, Heat and Power
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="The Homelab Wiki" class="md-nav__button md-logo" aria-label="The Homelab Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    The Homelab Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rules of /r/homelab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    An Introduction to Homelabs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Homelab Software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Homelab Hardware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../buyingguide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The New Homelabber's Guide to Buying Used Gear
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking buying guide, tips and tricks.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorials and How-To's
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vendors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vendors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sound Levels, Heat and Power
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sound Levels, Heat and Power
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a-word-on-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A Word on Data
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A Word on Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-about-watts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What about Watts?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#db-idle-vs-db-operating-vs-other" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dB (Idle) vs dB (Operating) vs. Other
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#btuhr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BTU/hr
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dell-rack-config-utility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dell Rack Config Utility
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hp-power-advisor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HP Power Advisor
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../buildlogs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build Logs.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../megaposts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Megaposts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a-word-on-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A Word on Data
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A Word on Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-about-watts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What about Watts?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#db-idle-vs-db-operating-vs-other" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dB (Idle) vs dB (Operating) vs. Other
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#btuhr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BTU/hr
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dell-rack-config-utility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dell Rack Config Utility
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hp-power-advisor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HP Power Advisor
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="sound-levels-heat-and-power">Sound Levels, Heat and Power</h1>
+<p>One of the most talked about topics when getting into home-labbing is HEAT and NOISE. Most hardware spec sheets will include pertinent information regarding heat output (in BTU/Hour) and noise (dBa). The following information has been aggregated from official documentation. </p>
+<h2 id="a-word-on-data">A Word on Data</h2>
+<h3 id="general">General</h3>
+<p>Since data presented varies from company to company (and from model to model) the most conservative (usually worst case), generalized values were used from given spec sheets to give the best indication of noise and heat output. These values are manufacturer best-case, usually at room temperature (23-25 degC) and no load.</p>
+<h3 id="what-about-watts">What about Watts?</h3>
+<p>Power wattage of a power supply for any given device is not indicative of ACTUAL wattage used, but can be used to get a quick value for the absolute maximum wattage the system could use (useful for when calculating the minimum current rating you should have on a circuit running the server). This varies wildly from configuration to configuration. How many CPUs, how many Hard Drives and how many sticks of RAM all change the actual wattage pulled. Therefore it is not included here as there are no official values for this kind of data. Actual Wattage used can be calculated using a device such a a Kill-A-Watt or using the below configuration tools from HP and Dell to configure their respective servers for an estimated value. Devices such as switches are a little more consistent with their usage and you may find information regarding their typical usage or typical usage at certain loads (PoE vs. non-PoE, how many physical connections, modules, etc)</p>
+<h3 id="db-idle-vs-db-operating-vs-other">dB (Idle) vs dB (Operating) vs. Other</h3>
+<p>These two values are the most common found across all data sheets. Idle represents the machine running while Operating will represent hard drive activity noise (not necessarily stress) Some other states include Standby(dBa) and Stress(dBa). These states are not included as they are not universal.</p>
+<h3 id="btuhr">BTU/hr</h3>
+<p>These values have a lot of variance. From what can be gathered the BTU/hr SHOULD represent the entire device as a whole, but may only be the power supply itself. Older generation and fixed power supply devices will report one value for BTU/hr. These values are all calculated at a manufacturer rated wattage. Voltages will make these values change slightly, all of the below values are for 120 Vrms. The HP servers (and some Dell) show multiple values, this is because of the modular nature of the HP Common Slot power supplies which will change the BTU/hr rating depending on which ones are present in the server.</p>
+<h3 id="dell-rack-config-utility">Dell Rack Config Utility</h3>
+<p>For Dell servers (current models) you can go to the following configuration tool instead of looking up spec sheets. This will calculate cost, BTU, dB and kWh. ~~<a href="http://essa.us.dell.com/DellStarOnline/DCCP.aspx?c=us&amp;l=en&amp;s=gen&amp;Template=6945c07e-3be7-47aa-b318-18f9052df893">Here</a>~~ DEAD LINK</p>
+<p>Dell has upgraded their Rack Config Utility to the Enterprise Infrastructure Planning Tool: <a href="http://dell-ui-eipt.azurewebsites.net/#/">Here</a></p>
+<h3 id="hp-power-advisor">HP Power Advisor</h3>
+<p>For HP servers, this will calculate power and BTU along with giving you the granularity of configuring specific parts to calculate estimated Wattage and cost. Really great tool and works for older generations. Does not include dB level of servers which is the only drawback. <a href="http://www.hpe.com/servers/poweradvisor/online">Here</a></p>
+<h1 id="servers">Servers</h1>
+<table>
+<thead>
+<tr>
+<th>Brand</th>
+<th>Model</th>
+<th>dB (Idle)</th>
+<th>dB (Operating)</th>
+<th>BTU/hr</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HP</td>
+<td>Microserver G8</td>
+<td>18</td>
+<td>21</td>
+<td>682 (150W) / 840 (200W)</td>
+</tr>
+<tr>
+<td>HP</td>
+<td>ML 310e G8</td>
+<td>26</td>
+<td>28</td>
+<td>1773</td>
+</tr>
+<tr>
+<td>HP</td>
+<td>ML 350 G5</td>
+<td>33</td>
+<td>33</td>
+<td>4112</td>
+</tr>
+<tr>
+<td>HP</td>
+<td>ML 350 G6</td>
+<td>32.48</td>
+<td>32.4</td>
+<td>1173 (460W) / 2892 (750W) / 3375 (1200W)</td>
+</tr>
+<tr>
+<td>HP</td>
+<td>DL 360 G4</td>
+<td>50</td>
+<td>53</td>
+<td>2000</td>
+</tr>
+<tr>
+<td>HP</td>
+<td>DL 360 G5</td>
+<td>60</td>
+<td>75</td>
+<td>2910</td>
+</tr>
+<tr>
+<td>HP</td>
+<td>DL 360 G6 (1 CPU)</td>
+<td>27</td>
+<td>32</td>
+<td>1173 (460W) / 2892 (750W) / 3375 (1200W)</td>
+</tr>
+<tr>
+<td>HP</td>
+<td>DL 360 G6 (2 CPU)</td>
+<td>33</td>
+<td>38</td>
+<td>1173 (460W) / 2892 (750W) / 3375 (1200W)</td>
+</tr>
+<tr>
+<td>HP</td>
+<td>DL 360 G7 (1 CPU)</td>
+<td>27</td>
+<td>32</td>
+<td>1173 (460W) / 2892 (750W) / 3375 (1200W)</td>
+</tr>
+<tr>
+<td>HP</td>
+<td>DL 360 G7 (2 CPU)</td>
+<td>33</td>
+<td>38</td>
+<td>1173 (460W) / 2892 (750W) / 3375 (1200W)</td>
+</tr>
+<tr>
+<td>HP</td>
+<td>DL 360p G8</td>
+<td>34</td>
+<td>35-42</td>
+<td></td>
+</tr>
+<tr>
+<td>HP</td>
+<td>DL 380 G4</td>
+<td>58</td>
+<td>58</td>
+<td>2508</td>
+</tr>
+<tr>
+<td>HP</td>
+<td>DL 380 G5</td>
+<td>44</td>
+<td>44</td>
+<td>3530</td>
+</tr>
+<tr>
+<td>HP</td>
+<td>DL 380 G6</td>
+<td>22</td>
+<td>28</td>
+<td>1173 (460W) / 2892 (750W) / 3375 (1200W)</td>
+</tr>
+<tr>
+<td>HP</td>
+<td>DL 380 G7</td>
+<td>22</td>
+<td>28</td>
+<td>1173 (460W) / 2892 (750W) / 3375 (1200W)</td>
+</tr>
+<tr>
+<td>HP</td>
+<td>DL 380p G8</td>
+<td>25</td>
+<td>35</td>
+<td>1794 (460W) / 2925 (750W) / 3530 (1200W)</td>
+</tr>
+<tr>
+<td>Dell</td>
+<td>R210</td>
+<td>49</td>
+<td>49</td>
+<td>1039</td>
+</tr>
+<tr>
+<td>Dell</td>
+<td>R210 II (Core i3)</td>
+<td>38</td>
+<td>38</td>
+<td>1040</td>
+</tr>
+<tr>
+<td>Dell</td>
+<td>R210 II (E3-1200)</td>
+<td>40</td>
+<td>41</td>
+<td>1040</td>
+</tr>
+<tr>
+<td>Dell</td>
+<td>R510 (4 bay)</td>
+<td>40</td>
+<td>40</td>
+<td>1840</td>
+</tr>
+<tr>
+<td>Dell</td>
+<td>R510 (8 bay)</td>
+<td>42</td>
+<td>42</td>
+<td>2200</td>
+</tr>
+<tr>
+<td>Dell</td>
+<td>R510 (12 bay)</td>
+<td>51</td>
+<td>51</td>
+<td>2450</td>
+</tr>
+<tr>
+<td>Dell</td>
+<td>R610 (1 CPU)</td>
+<td>34</td>
+<td>37</td>
+<td>2446</td>
+</tr>
+<tr>
+<td>Dell</td>
+<td>R610 (2 CPU)</td>
+<td>35</td>
+<td>37</td>
+<td>2446</td>
+</tr>
+<tr>
+<td>Dell</td>
+<td>R610 (2 CPU + PERC6/E)</td>
+<td>44</td>
+<td>44</td>
+<td>2446</td>
+</tr>
+<tr>
+<td>Dell</td>
+<td>R710</td>
+<td>39</td>
+<td>42</td>
+<td>1944(570W) / 2968 (870W)</td>
+</tr>
+<tr>
+<td>Dell</td>
+<td>R720</td>
+<td>25</td>
+<td>26</td>
+<td>1908 (495W) / 2891 (750W) / 4100 (1100W)</td>
+</tr>
+<tr>
+<td>Dell</td>
+<td>R720XD</td>
+<td>28</td>
+<td>30</td>
+<td>1908 (495W) / 2891 (750W) / 4100 (1100W)</td>
+</tr>
+<tr>
+<td>Dell</td>
+<td>R810</td>
+<td>x</td>
+<td>x</td>
+<td>4012</td>
+</tr>
+</tbody>
+</table>
+<h1 id="switches">Switches</h1>
+<table>
+<thead>
+<tr>
+<th>Brand</th>
+<th>Model</th>
+<th>dB (Idle)</th>
+<th>dB (Operating)</th>
+<th>BTU/hr</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Arista</td>
+<td>7124S</td>
+<td>-</td>
+<td>70</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Cisco</td>
+<td>3560-24TS</td>
+<td>-</td>
+<td>42</td>
+<td>89</td>
+</tr>
+<tr>
+<td>Cisco</td>
+<td>3560-48TS</td>
+<td>-</td>
+<td>42</td>
+<td>153</td>
+</tr>
+<tr>
+<td>Cisco</td>
+<td>3560-24PS</td>
+<td>-</td>
+<td>42</td>
+<td>144</td>
+</tr>
+<tr>
+<td>Cisco</td>
+<td>3560-48PS</td>
+<td>-</td>
+<td>42</td>
+<td>293</td>
+</tr>
+<tr>
+<td>Cisco</td>
+<td>3560G-24TS</td>
+<td>-</td>
+<td>42</td>
+<td>249</td>
+</tr>
+<tr>
+<td>Cisco</td>
+<td>3560G-48TS</td>
+<td>-</td>
+<td>48</td>
+<td>422</td>
+</tr>
+<tr>
+<td>Cisco</td>
+<td>3560G-24PS</td>
+<td>-</td>
+<td>38-44</td>
+<td>325</td>
+</tr>
+<tr>
+<td>Cisco</td>
+<td>3560G-48PS</td>
+<td>-</td>
+<td>52-58</td>
+<td>443</td>
+</tr>
+<tr>
+<td>HP</td>
+<td>2910-24G al</td>
+<td>-</td>
+<td>39.4 - 53.5</td>
+<td>279</td>
+</tr>
+<tr>
+<td>HP</td>
+<td>2910-48G al</td>
+<td>-</td>
+<td>39.4 - 53.5</td>
+<td>356</td>
+</tr>
+<tr>
+<td>HP</td>
+<td>2910-24G-PoE+ al</td>
+<td>-</td>
+<td>38.1 - 51.5</td>
+<td>447</td>
+</tr>
+<tr>
+<td>HP</td>
+<td>2910-48G-PoE+ al</td>
+<td>-</td>
+<td>38.1 - 51.5</td>
+<td>667</td>
+</tr>
+<tr>
+<td>Juniper</td>
+<td>EX2200-48T</td>
+<td>-</td>
+<td>31 (JUNOS 12.3R5.7 or lower) - 40</td>
+<td>140</td>
+</tr>
+<tr>
+<td>Ubiquiti</td>
+<td>48P Non-POE</td>
+<td>-</td>
+<td>21</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
