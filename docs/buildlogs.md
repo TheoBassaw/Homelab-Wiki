@@ -1,7 +1,7 @@
 # Build Logs.
 ______________________
 
-##How to post here:
+## How to post here:
 
 The following is how build logs should be presented, please see the sytax, copy-pasta and edit as required. To generate a link for your post please simply add another breadcrumb to the www.reddit.com/r/homelab/wiki/buildlogs/[YOUR.URL.HERE] URL and you will be prompted to create the page. 
 
